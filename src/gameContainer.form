@@ -503,6 +503,87 @@
           </grid>
         </children>
       </grid>
+      <grid id="ba609" binding="originScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="origin"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="bde67" binding="northScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="north"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="38375" binding="southScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="south"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="55ba7" binding="eastScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="east"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="cb5ee" binding="westScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="west"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="85054" binding="addCaughtPkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="addPokemon"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="17969" binding="chooseBattlePkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="choosePokemon"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="7a332" binding="battleScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="battle"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="88380" binding="gameOverScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="gameOver"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="5b0d5" binding="gameWonScreen" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card1"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
     </children>
   </grid>
   <buttonGroups>

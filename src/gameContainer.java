@@ -38,6 +38,16 @@ public class gameContainer {
     private JRadioButton pokemonSelectFuecocoBtn;
     private JRadioButton pokemonSelectFroakieBtn;
     private JRadioButton pokemonSelectPikachuBtn;
+    private JPanel originScreen;
+    private JPanel northScreen;
+    private JPanel southScreen;
+    private JPanel eastScreen;
+    private JPanel westScreen;
+    private JPanel addCaughtPkmnScreen;
+    private JPanel chooseBattlePkmnScreen;
+    private JPanel battleScreen;
+    private JPanel gameOverScreen;
+    private JPanel gameWonScreen;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
     private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco","Fuecoco"));
 
