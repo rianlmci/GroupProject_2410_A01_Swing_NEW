@@ -9,7 +9,7 @@ public class ParkLocation {
     private String description;
     private String appearance;
     private boolean wildPkmnPresent = true;
-    private Pokemon wildPokemon = new Pokemon("Pikachu", "PIKACHU");;
+    private Pokemon wildPokemon = new Pokemon("Pikachu");;
     public ParkLocation(Location location){
         if(
             location == Location.NORTH ||
@@ -25,7 +25,7 @@ public class ParkLocation {
                     //TODO SET INTERNAL LOCATION TO ENUM
                     //TODO SET STRING DESCRIPTION TO SHORT DESCRIPTION OF CHOSEN LOCATION
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
-                    wildPokemon = new Pokemon("Pikachu", "PIKACHU");
+                    wildPokemon = new Pokemon("Pikachu");
                     /*
                     * TODO: replace above with a pokemon that fits the chosen area.
                     */
@@ -35,7 +35,7 @@ public class ParkLocation {
                     //TODO SET INTERNAL LOCATION TO ENUM
                     //TODO SET STRING DESCRIPTION TO SHORT DESCRIPTION OF CHOSEN LOCATION
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
-                    wildPokemon = new Pokemon("Pikachu", "PIKACHU");
+                    wildPokemon = new Pokemon("Pikachu");
                     /*
                      * TODO: replace above with a pokemon that fits the chosen area.
                      */
@@ -45,7 +45,7 @@ public class ParkLocation {
                     //TODO SET INTERNAL LOCATION TO ENUM
                     //TODO SET STRING DESCRIPTION TO SHORT DESCRIPTION OF CHOSEN LOCATION
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
-                    wildPokemon = new Pokemon("Pikachu", "PIKACHU");
+                    wildPokemon = new Pokemon("Pikachu");
                     /*
                      * TODO: replace above with a pokemon that fits the chosen area.
                      */
@@ -55,7 +55,7 @@ public class ParkLocation {
                     //TODO SET INTERNAL LOCATION TO ENUM
                     //TODO SET STRING DESCRIPTION TO SHORT DESCRIPTION OF CHOSEN LOCATION
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
-                    wildPokemon = new Pokemon("Pikachu", "PIKACHU");
+                    wildPokemon = new Pokemon("Pikachu");
                     /*
                      * TODO: replace above with a pokemon that fits the chosen area.
                      */
@@ -66,7 +66,7 @@ public class ParkLocation {
                     //TODO SET INTERNAL LOCATION TO ENUM
                     //TODO SET STRING DESCRIPTION TO SHORT DESCRIPTION OF CHOSEN LOCATION
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
-                    wildPokemon = new Pokemon(null,null);
+                    wildPokemon = new Pokemon(null);
                     break;
             }
         }

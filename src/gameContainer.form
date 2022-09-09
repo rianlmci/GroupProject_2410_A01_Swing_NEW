@@ -161,7 +161,7 @@
                 <properties>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
-                  <icon value="images/MasculineResized.png"/>
+                  <icon value="images/Masculine.png"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -170,7 +170,7 @@
                 <properties>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
-                  <icon value="images/FeminineResized.png"/>
+                  <icon value="images/Feminine.png"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -375,57 +375,14 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="bf4f" class="javax.swing.JLabel" binding="pokemonSelectFroakie">
-                <constraints border-constraint="East"/>
-                <properties>
-                  <horizontalAlignment value="0"/>
-                  <horizontalTextPosition value="0"/>
-                  <icon value="images/Fuecoco.png"/>
-                  <maximumSize width="139" height="300"/>
-                  <minimumSize width="139" height="300"/>
-                  <text value=""/>
-                </properties>
-              </component>
-              <component id="11e93" class="javax.swing.JLabel" binding="pokemonSelectFuecoco">
-                <constraints border-constraint="West"/>
-                <properties>
-                  <horizontalAlignment value="0"/>
-                  <horizontalTextPosition value="0"/>
-                  <icon value="images/Fuecoco.png"/>
-                  <text value=""/>
-                </properties>
-              </component>
               <grid id="fa738" binding="buttonContainer" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="South"/>
                 <properties>
                   <background color="-12828863"/>
-                  <preferredSize width="300" height="150"/>
+                  <preferredSize width="300" height="100"/>
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="dd06e" class="javax.swing.JRadioButton" binding="pokemonSelectFuecocoBtn">
-                    <constraints border-constraint="West"/>
-                    <properties>
-                      <background color="-12828863"/>
-                      <horizontalAlignment value="0"/>
-                      <horizontalTextPosition value="0"/>
-                      <preferredSize width="150" height="19"/>
-                      <selected value="true"/>
-                      <text value=""/>
-                    </properties>
-                  </component>
-                  <component id="83cf6" class="javax.swing.JRadioButton" binding="pokemonSelectFroakieBtn">
-                    <constraints border-constraint="East"/>
-                    <properties>
-                      <background color="-12828863"/>
-                      <hideActionText value="false"/>
-                      <horizontalAlignment value="0"/>
-                      <horizontalTextPosition value="0"/>
-                      <preferredSize width="150" height="19"/>
-                      <selected value="false"/>
-                      <text value=""/>
-                    </properties>
-                  </component>
                   <component id="fac37" class="javax.swing.JButton">
                     <constraints border-constraint="South"/>
                     <properties>
@@ -474,8 +431,114 @@
                       </component>
                     </children>
                   </grid>
-                  <component id="d76b9" class="javax.swing.JRadioButton" binding="pokemonSelectPikachuBtn">
-                    <constraints border-constraint="Center"/>
+                </children>
+              </grid>
+              <grid id="456c0" layout-manager="GridBagLayout">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <background color="-12828863"/>
+                  <minimumSize width="214" height="400"/>
+                  <preferredSize width="314" height="400"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="e0c95" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <icon value="images/Fuecoco.png"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="8aca" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <icon value="images/Froakie.png"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="df7ad" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <icon value="images/Pikachu.png"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="d183" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <icon value="images/Turtwig.png"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="57309" class="javax.swing.JRadioButton" binding="selectStarterFuecocoBtn">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12828863"/>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <preferredSize width="150" height="19"/>
+                      <selected value="true"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="c0b0b" class="javax.swing.JRadioButton" binding="selectStarterFroakieBtn">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12828863"/>
+                      <enabled value="true"/>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <preferredSize width="150" height="19"/>
+                      <selected value="false"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="225bc" class="javax.swing.JRadioButton" binding="selectStarterPikachuBtn">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12828863"/>
+                      <enabled value="true"/>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <preferredSize width="150" height="19"/>
+                      <selected value="false"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="74699" class="javax.swing.JRadioButton" binding="selectStarterTurtwigBtn">
+                    <constraints>
+                      <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
                     <properties>
                       <background color="-12828863"/>
                       <enabled value="true"/>
@@ -488,17 +551,6 @@
                   </component>
                 </children>
               </grid>
-              <component id="3028c" class="javax.swing.JLabel" binding="pokemonSelectPikachu">
-                <constraints border-constraint="Center"/>
-                <properties>
-                  <horizontalAlignment value="0"/>
-                  <horizontalTextPosition value="0"/>
-                  <icon value="images/Pikachu.png"/>
-                  <maximumSize width="139" height="300"/>
-                  <minimumSize width="139" height="300"/>
-                  <text value=""/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>
@@ -597,6 +649,10 @@
       <member id="dd06e"/>
       <member id="83cf6"/>
       <member id="d76b9"/>
+      <member id="57309"/>
+      <member id="c0b0b"/>
+      <member id="225bc"/>
+      <member id="74699"/>
     </group>
   </buttonGroups>
 </form>

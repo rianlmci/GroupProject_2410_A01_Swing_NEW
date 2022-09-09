@@ -16,32 +16,34 @@ public class Pokemon {
     */
    private String moves [] [] = new String [4] [1];
 
-   public Pokemon(String nickname, String speciesName){
-      this.name = nickname;
+   public Pokemon(String speciesName){
 
       switch(speciesName){
          case "Fuecoco":
             this.speciesName = "Fuecoco";
+            this.name = "Fuecoco";
             this.type = Type.FIRE;
-            this.appearance = "/images/Placeholder.png"; //TODO
+            this.appearance = "/images/Fuecoco.png"; //TODO
             //TODO SET MOVE SET TO 2D ARRAY
             break;
          case "Pikachu":
             this.speciesName = "Pikachu";
+            this.name = "Pikachu";
             this.type = Type.ELECTRIC;
-            this.appearance = "/images/Placeholder.png"; //TODO
+            this.appearance = "/images/Pikachu.png"; //TODO
             //TODO SET MOVE SET TO 2D ARRAY
             break;
          case "Turtwig":
             this.speciesName = "Turtwig";
+            this.name= "Turtwig";
             this.type = Type.GRASS;
-            this.appearance = "/images/Placeholder.png"; //TODO
+            this.appearance = "/images/Turtwig.png"; //TODO
             //TODO SET MOVE SET TO 2D ARRAY
             break;
          case "Froakie":
             this.speciesName = "Froakie";
             this.type = Type.WATER;
-            this.appearance = "/images/Placeholder.png"; //TODO
+            this.appearance = "/images/Froakie.png"; //TODO
             //TODO SET MOVE SET TO 2D ARRAY
             break;
          }

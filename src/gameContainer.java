@@ -32,12 +32,6 @@ public class gameContainer {
     private JLabel pokemonSelectScreenPaddingSouth;
     private JPanel buttonContainer;
     private JPanel pokemonSelectPokemonContainer;
-    private JLabel pokemonSelectFroakie;
-    private JLabel pokemonSelectFuecoco;
-    private JLabel pokemonSelectPikachu;
-    private JRadioButton pokemonSelectFuecocoBtn;
-    private JRadioButton pokemonSelectFroakieBtn;
-    private JRadioButton pokemonSelectPikachuBtn;
     private JPanel originScreen;
     private JPanel northScreen;
     private JPanel southScreen;
@@ -48,8 +42,12 @@ public class gameContainer {
     private JPanel battleScreen;
     private JPanel gameOverScreen;
     private JPanel gameWonScreen;
+    private JRadioButton selectStarterFuecocoBtn;
+    private JRadioButton selectStarterFroakieBtn;
+    private JRadioButton selectStarterPikachuBtn;
+    private JRadioButton selectStarterTurtwigBtn;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
-    private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco","Fuecoco"));
+    private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco"));
 
 
     public gameContainer() {
@@ -66,29 +64,17 @@ public class gameContainer {
                 //TODO
             }
         });
+
         createTrainerBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if(playerSelectNameInput.getText()!= null){myPlayer.setName(playerSelectNameInput.getText());}
+                if(!playerSelectNameInput.getText().isEmpty()){myPlayer.setName(playerSelectNameInput.getText());}
 
                 if (playerSelectMascBtn.isSelected()){
                     myPlayer.setAppearance("masculine");
                 }
-
-                pkmnGameContainerDeck.show(pokemonGameContainerPane, "pokemonSelect");
-            }
-        });
-        createTrainerBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                if(playerSelectNameInput.getText()!= null){myPlayer.setName(playerSelectNameInput.getText());}
-
-                if (playerSelectMascBtn.isSelected()){
-                    myPlayer.setAppearance("masculine");
-                }
-
+                pokemonSelectPlayerWelcomeLabel.setText("Welcome " + myPlayer.getName() + "!");
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "pokemonSelect");
             }
         });
