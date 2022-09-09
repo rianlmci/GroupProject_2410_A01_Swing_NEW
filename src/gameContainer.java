@@ -29,7 +29,7 @@ public class gameContainer {
     private JLabel pokemonSelectPlayerWelcomeLabel;
     private JLabel pokemonSelectScreenPaddingRight;
     private JLabel pokemonSelectScreenPaddingLeft;
-    private JLabel pokemonSelectScreenPaddingSouth;
+    private JLabel pokemonSelectScreenPaddingBottom;
     private JPanel lowerButtonContainer;
     private JPanel pokemonSelectPokemonContainer;
     private JPanel originScreen;
@@ -48,6 +48,14 @@ public class gameContainer {
     private JRadioButton selectStarterTurtwigBtn;
     private JButton pokemonSelectToOriginBtn;
     private JTextArea pokemonSelectNameInput;
+    private JLabel originScreenPaddingLeft;
+    private JLabel originScreenPaddingRight;
+    private JLabel originScreenPaddingBottom;
+    private JLabel originScreenPaddingTop;
+    private JPanel originScreenCenter;
+    private JFormattedTextField originScreenFormattedStatsText;
+    private JLabel originScreenStatsText;
+    //private JLabel originScreenStatsText;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
     private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco"));
 
@@ -97,9 +105,24 @@ public class gameContainer {
                 if(selectStarterFuecocoBtn.isSelected()){
                     myPlayer.chooseStarterPokemon(new Pokemon("Fuecoco"));
                 }
+                else if(selectStarterTurtwigBtn.isSelected()){
+                    myPlayer.chooseStarterPokemon(new Pokemon("Turtwig"));
+                }
+
+                else if(selectStarterFroakieBtn.isSelected()){
+                    myPlayer.chooseStarterPokemon(new Pokemon("Froakie"));
+                }
+
+                else if(selectStarterPikachuBtn.isSelected()){
+                    myPlayer.chooseStarterPokemon(new Pokemon("Pikachu"));
+                }
+
                 if(!pokemonSelectNameInput.getText().isEmpty()){
                     myPlayer.capturedPokemon[0].setName(pokemonSelectNameInput.getText());
                 }
+
+                originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
             }
         });
     }

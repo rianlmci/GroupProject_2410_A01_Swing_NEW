@@ -82,4 +82,7 @@ public class Pokemon {
 
    public void setLocation(Location newLocation){this.location = newLocation;} //also might be redundant??
 
+   public String getSpeciesName() {
+      return speciesName;
+   }
 }

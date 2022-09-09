@@ -361,7 +361,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="31030" class="javax.swing.JLabel" binding="pokemonSelectScreenPaddingSouth">
+          <component id="31030" class="javax.swing.JLabel" binding="pokemonSelectScreenPaddingBottom">
             <constraints border-constraint="South"/>
             <properties>
               <preferredSize width="16" height="50"/>
@@ -561,7 +561,63 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="46610" class="javax.swing.JLabel" binding="originScreenPaddingLeft">
+            <constraints border-constraint="West"/>
+            <properties>
+              <preferredSize width="50" height="16"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="883d6" class="javax.swing.JLabel" binding="originScreenPaddingRight">
+            <constraints border-constraint="East"/>
+            <properties>
+              <preferredSize width="50" height="16"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="2c598" class="javax.swing.JLabel" binding="originScreenPaddingBottom">
+            <constraints border-constraint="South"/>
+            <properties>
+              <preferredSize width="16" height="50"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="fc5c3" class="javax.swing.JLabel" binding="originScreenPaddingTop">
+            <constraints border-constraint="North"/>
+            <properties>
+              <preferredSize width="16" height="50"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <grid id="ca24b" binding="originScreenCenter" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="37d11" class="javax.swing.JLabel">
+                <constraints border-constraint="North"/>
+                <properties>
+                  <font size="36" style="0"/>
+                  <foreground color="-4473925"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <text value="Your Progress So Far..."/>
+                </properties>
+              </component>
+              <component id="44896" class="javax.swing.JLabel" binding="originScreenStatsText">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <font size="16" style="0"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <text value="(STATS GO HERE THIS READ HTML FOR SOME REASON)"/>
+                  <verticalAlignment value="1"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
       </grid>
       <grid id="bde67" binding="northScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>

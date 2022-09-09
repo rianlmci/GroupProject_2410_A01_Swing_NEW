@@ -82,16 +82,22 @@ public class Player {
         return capturedCount;
     }
 
+    /**
+     * Gives pokemon information as a String
+     * @return html formatted string to put inside a JLabel
+     */
     public String getCapturedPkmnInfo(){
         StringBuilder capturedMonInfo = new StringBuilder();
+        capturedMonInfo.append("<html><center><p><h1>Captured Pokemon Total:</h1></p>"+this.getCapturedPkmnNum()+"<h1>Your Pokemon Team:</h1>");
         for (int i = 0; i < capturedPokemon.length; i++) {
             if(capturedPokemon[i] != null){
                 capturedMonInfo.append(
-                    "Nickname: " + capturedPokemon[i].getName() + "\n" +
-                    "Health: " + capturedPokemon[i].getHealth() + "\n"
+                    "<p>Nickname: " + capturedPokemon[i].getName() + "</p>" +
+                    "<p>Species: " + capturedPokemon[i].getSpeciesName() + "</p>" +
+                    "<p>Health: " + capturedPokemon[i].getHealth() + "</p><p></p>"
                 );
-
             }
+        capturedMonInfo.append("</center></html>");
         }
         return capturedMonInfo.toString();
     }
