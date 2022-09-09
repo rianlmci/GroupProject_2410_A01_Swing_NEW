@@ -8,13 +8,6 @@ public class GameMaster {
     private int battleTurn = 1;
     private int battleDamage;
 
-    //GAME PIECES
-    private ParkLocation north = new ParkLocation(Location.NORTH);
-    private ParkLocation south = new ParkLocation(Location.SOUTH);
-    private ParkLocation east = new ParkLocation(Location.EAST);
-    private ParkLocation west = new ParkLocation(Location.WEST);
-    private ParkLocation origin = new ParkLocation(Location.ORIGIN);
-
     public boolean isGameWon(Player player){
         if(player.getCapturedPkmnNum() == 4){gameWon = true;}
         return gameWon;
@@ -93,26 +86,6 @@ public class GameMaster {
                 break;
         }
     return damage;
-    }
-
-    public ParkLocation getNorth() {
-        return north;
-    }
-
-    public ParkLocation getSouth() {
-        return south;
-    }
-
-    public ParkLocation getEast() {
-        return east;
-    }
-
-    public ParkLocation getWest() {
-        return west;
-    }
-
-    public ParkLocation getOrigin() {
-        return origin;
     }
 
 }

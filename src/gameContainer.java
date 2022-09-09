@@ -30,7 +30,7 @@ public class gameContainer {
     private JLabel pokemonSelectScreenPaddingRight;
     private JLabel pokemonSelectScreenPaddingLeft;
     private JLabel pokemonSelectScreenPaddingSouth;
-    private JPanel buttonContainer;
+    private JPanel lowerButtonContainer;
     private JPanel pokemonSelectPokemonContainer;
     private JPanel originScreen;
     private JPanel northScreen;
@@ -46,8 +46,20 @@ public class gameContainer {
     private JRadioButton selectStarterFroakieBtn;
     private JRadioButton selectStarterPikachuBtn;
     private JRadioButton selectStarterTurtwigBtn;
+    private JButton pokemonSelectToOriginBtn;
+    private JTextArea pokemonSelectNameInput;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
     private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco"));
+
+    //GAME PIECES
+    //This causes a crash when it is called, probably because it's not fully implemented. also I move this from game master for testing.
+    /*
+    private ParkLocation north = new ParkLocation(Location.NORTH);
+    private ParkLocation south = new ParkLocation(Location.SOUTH);
+    private ParkLocation east = new ParkLocation(Location.EAST);
+    private ParkLocation west = new ParkLocation(Location.WEST);
+    private ParkLocation origin = new ParkLocation(Location.ORIGIN);
+     */
 
 
     public gameContainer() {
@@ -76,6 +88,18 @@ public class gameContainer {
                 }
                 pokemonSelectPlayerWelcomeLabel.setText("Welcome " + myPlayer.getName() + "!");
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "pokemonSelect");
+            }
+        });
+        pokemonSelectToOriginBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if(selectStarterFuecocoBtn.isSelected()){
+                    myPlayer.chooseStarterPokemon(new Pokemon("Fuecoco"));
+                }
+                if(!pokemonSelectNameInput.getText().isEmpty()){
+                    myPlayer.capturedPokemon[0].setName(pokemonSelectNameInput.getText());
+                }
             }
         });
     }

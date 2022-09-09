@@ -375,7 +375,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="fa738" binding="buttonContainer" layout-manager="BorderLayout" hgap="0" vgap="0">
+              <grid id="fa738" binding="lowerButtonContainer" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="South"/>
                 <properties>
                   <background color="-12828863"/>
@@ -383,7 +383,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="fac37" class="javax.swing.JButton">
+                  <component id="fac37" class="javax.swing.JButton" binding="pokemonSelectToOriginBtn">
                     <constraints border-constraint="South"/>
                     <properties>
                       <background color="-10525081"/>
@@ -411,7 +411,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="211d" class="javax.swing.JTextArea">
+                      <component id="211d" class="javax.swing.JTextArea" binding="pokemonSelectNameInput">
                         <constraints border-constraint="Center"/>
                         <properties>
                           <preferredSize width="400" height="17"/>
