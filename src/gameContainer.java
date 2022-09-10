@@ -69,7 +69,6 @@ public class gameContainer {
     private ParkLocation origin = new ParkLocation(Location.ORIGIN);
      */
 
-
     public gameContainer() {
         startGameBtn.addActionListener(new ActionListener() {
             @Override
@@ -121,6 +120,10 @@ public class gameContainer {
                     myPlayer.capturedPokemon[0].setName(pokemonSelectNameInput.getText());
                 }
 
+                else{
+                    myPlayer.capturedPokemon[0].setName(myPlayer.capturedPokemon[0].getSpeciesName());
+                }
+                //saveGame();
                 originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
             }

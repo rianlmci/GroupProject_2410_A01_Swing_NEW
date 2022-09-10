@@ -22,14 +22,9 @@ public class Player {
         this.capturedPokemon[0] = starterPokemon;
     }
 
-    public Player() {
-
-    }
-
     public void chooseStarterPokemon(Pokemon chosenPokemon){
         capturedPokemon[0] = chosenPokemon;
-    } //Might be redundant due to constructor??
-
+    }
 
     public void addPkmntoPrty(Pokemon caughtMon){
         for(int i = 1; i < capturedPokemon.length; i++){
@@ -65,7 +60,7 @@ public class Player {
     public void setAppearance(String chosenAppearance){
         switch(chosenAppearance){
             case "feminine":
-                this.appearance= this.appearance = "/images/Masculine.png"; //TODO
+                this.appearance= this.appearance = "/images/Feminine.png";
                 break;
             case "masculine":
                 this.appearance = "/images/Masculine.png";

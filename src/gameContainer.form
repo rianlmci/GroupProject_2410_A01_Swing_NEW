@@ -559,7 +559,9 @@
         <constraints>
           <card name="origin"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-12828863"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="46610" class="javax.swing.JLabel" binding="originScreenPaddingLeft">
@@ -572,6 +574,8 @@
           <component id="883d6" class="javax.swing.JLabel" binding="originScreenPaddingRight">
             <constraints border-constraint="East"/>
             <properties>
+              <background color="-16777216"/>
+              <foreground color="-12828863"/>
               <preferredSize width="50" height="16"/>
               <text value=""/>
             </properties>
@@ -592,7 +596,9 @@
           </component>
           <grid id="ca24b" binding="originScreenCenter" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints border-constraint="Center"/>
-            <properties/>
+            <properties>
+              <background color="-12828863"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="37d11" class="javax.swing.JLabel">
@@ -608,7 +614,9 @@
               <component id="44896" class="javax.swing.JLabel" binding="originScreenStatsText">
                 <constraints border-constraint="Center"/>
                 <properties>
+                  <background color="-12828863"/>
                   <font size="16" style="0"/>
+                  <foreground color="-4473925"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
                   <text value="(STATS GO HERE THIS READ HTML FOR SOME REASON)"/>
