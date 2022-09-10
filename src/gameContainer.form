@@ -601,7 +601,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="37d11" class="javax.swing.JLabel">
+              <component id="37d11" class="javax.swing.JLabel" binding="originScreenTitleLabel">
                 <constraints border-constraint="North"/>
                 <properties>
                   <font size="36" style="0"/>
@@ -612,15 +612,22 @@
                 </properties>
               </component>
               <component id="44896" class="javax.swing.JLabel" binding="originScreenStatsText">
-                <constraints border-constraint="Center"/>
+                <constraints border-constraint="East"/>
                 <properties>
                   <background color="-12828863"/>
-                  <font size="16" style="0"/>
+                  <font size="12" style="0"/>
                   <foreground color="-4473925"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
                   <text value="(STATS GO HERE THIS READ HTML FOR SOME REASON)"/>
                   <verticalAlignment value="1"/>
+                </properties>
+              </component>
+              <component id="aaf55" class="javax.swing.JLabel" binding="originScreenTrainerAppearanceLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <icon value="images/Feminine.png"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>

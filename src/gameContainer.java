@@ -55,6 +55,9 @@ public class gameContainer {
     private JPanel originScreenCenter;
     private JFormattedTextField originScreenFormattedStatsText;
     private JLabel originScreenStatsText;
+    private JLabel originScreenTrainerAppearanceLabel;
+    private JLabel originScreenTitleLabel;
+    private JLabel origin;
     //private JLabel originScreenStatsText;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
     private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco"));
@@ -123,8 +126,10 @@ public class gameContainer {
                 else{
                     myPlayer.capturedPokemon[0].setName(myPlayer.capturedPokemon[0].getSpeciesName());
                 }
-                //saveGame();
+                //saveGame(); //TODO
                 originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
+                originScreenTitleLabel.setText(myPlayer.getName() + "'s Progress So Far...");
+                originScreenTrainerAppearanceLabel.setIcon(new ImageIcon(gameContainer.class.getResource(myPlayer.getAppearance())));
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
             }
         });
@@ -133,6 +138,7 @@ public class gameContainer {
         JFrame frame = new JFrame("2410 Group Project A01: Pokemon");
         frame.setContentPane(new gameContainer().pokemonGameContainerPane);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
     }

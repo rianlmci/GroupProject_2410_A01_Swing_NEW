@@ -83,7 +83,7 @@ public class Player {
      */
     public String getCapturedPkmnInfo(){
         StringBuilder capturedMonInfo = new StringBuilder();
-        capturedMonInfo.append("<html><center><p><h1>Captured Pokemon Total:</h1></p>"+this.getCapturedPkmnNum()+"<h1>Your Pokemon Team:</h1>");
+        capturedMonInfo.append("<html><center><p><h2>Captured Pokemon Total:</h2></p>"+this.getCapturedPkmnNum()+"<h2>Your Pokemon Team:</h2>");
         for (int i = 0; i < capturedPokemon.length; i++) {
             if(capturedPokemon[i] != null){
                 capturedMonInfo.append(
@@ -104,4 +104,5 @@ public class Player {
     public void setName(String newName) {
         this.name = newName;
     }
+
 }

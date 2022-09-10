@@ -16,6 +16,47 @@ public class Pokemon {
     */
    private String moves [] [] = new String [4] [1];
 
+   /**
+    * Pokemon constructor with nickname. Added this to work more easily with capturing pokemon.
+    * @param speciesName name of the pokemon's species
+    * @param nickName what the player chooses to call this pokemon.
+    */
+   public Pokemon(String speciesName, String nickName){
+      this.name = nickName;
+      switch(speciesName){
+         case "Fuecoco":
+            this.speciesName = "Fuecoco";
+            this.name = "Fuecoco";
+            this.type = Type.FIRE;
+            this.appearance = "/images/Fuecoco.png"; //TODO
+            //TODO SET MOVE SET TO 2D ARRAY
+            break;
+         case "Pikachu":
+            this.speciesName = "Pikachu";
+            this.name = "Pikachu";
+            this.type = Type.ELECTRIC;
+            this.appearance = "/images/Pikachu.png"; //TODO
+            //TODO SET MOVE SET TO 2D ARRAY
+            break;
+         case "Turtwig":
+            this.speciesName = "Turtwig";
+            this.name= "Turtwig";
+            this.type = Type.GRASS;
+            this.appearance = "/images/Turtwig.png"; //TODO
+            //TODO SET MOVE SET TO 2D ARRAY
+            break;
+         case "Froakie":
+            this.speciesName = "Froakie";
+            this.type = Type.WATER;
+            this.appearance = "/images/Froakie.png"; //TODO
+            //TODO SET MOVE SET TO 2D ARRAY
+            break;
+      }
+   }
+   /**
+    * Pokemon constructor without nickname.
+    * @param speciesName name of the pokemon's species.
+    */
    public Pokemon(String speciesName){
 
       switch(speciesName){
