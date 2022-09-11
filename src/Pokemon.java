@@ -12,11 +12,6 @@ public class Pokemon {
    private String speciesName;
    private Type type;
    private Location location; //might be redundant?
-   /* TODO:
-    * RIANNA'S NOTE:
-    * Review how 2D arrays work. The idea I has with the first dimension is move name, and the second dimension is elemental type.
-    * On the UML I had 3D array but on second thought it's really not needed I don't think.
-    */
    private static String moves[][] = {
            {"Fire Attack", "fire"},
            {"Water Attack", "water"},
@@ -26,9 +21,8 @@ public class Pokemon {
 
    /**
     * Pokemon constructor with nickname. Added this to work more easily with capturing pokemon.
-    *
     * @param speciesName name of the pokemon's species
-    * @param nickName    what the player chooses to call this pokemon.
+    * @param nickName what the player chooses to call this pokemon.
     */
    public Pokemon(String speciesName, String nickName) {
       this.name = nickName;
@@ -66,7 +60,7 @@ public class Pokemon {
    /**
     * Pokemon constructor without nickname.
     *
-    * @param speciesName name of the pokemon's species.
+    * @param speciesName name of the pokemon species we're creating.
     */
    public Pokemon(String speciesName) {
 
@@ -155,14 +149,38 @@ public class Pokemon {
       return speciesName;
    }
 
+   /**
+    *
+    * @param moveChoice an index number 0 through 3 that corresponds to
+    * the number of moves a pokemon can have (four moves).
+    * @return the name of the move at that index number for this pokemon.
+    */
    public String getMoveName (int moveChoice){
+      if(moveChoice > 3 || moveChoice < 0){
+         throw new IllegalArgumentException("This number is not in the accepted range of 0 through 3 inclusive.");
+      }
       return this.moves[moveChoice][0];
    }
 
+   /**
+    *
+    * @param moveChoice an index number 0 through 3 that corresponds to
+    * the number of moves a pokemon can have (four moves).
+    * @return the elemental type of the move at that index number for this pokemon in string form.
+    */
    public String getMoveType (int moveChoice){
+      if(moveChoice > 3 || moveChoice < 0){
+         throw new IllegalArgumentException("This number is not in the accepted range of 0 through 3 inclusive.");
+      }
       return moves[moveChoice][1];
    }
 
+   /**
+    *
+    * @param moveChoice an index number 0 through 3 that corresponds to
+    * the number of moves a pokemon can have (four moves).
+    * @return the elemental type of the move at that index number for this pokemon in enum-type form.
+    */
    public Type getMoveTypeAsType (int moveChoice){
       String typeAsString = moves[moveChoice][1];
       switch(typeAsString){
