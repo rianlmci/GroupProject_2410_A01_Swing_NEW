@@ -11,6 +11,11 @@ public class ParkLocation {
     private String appearance;
     private boolean wildPkmnPresent = true;
     private Pokemon wildPokemon = new Pokemon("Pikachu");
+
+    /**
+     * @author Jasmine Robbins for names descriptions and images. Rianna for everything else.
+     * @param location
+     */
     public ParkLocation(Location location){
         this.location = location;
         if(
