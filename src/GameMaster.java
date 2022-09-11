@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Controls game logic
  * @author Rianna McIntyre and Jasmine Robbins
@@ -7,6 +9,15 @@ public class GameMaster {
     private boolean gameLost = false;
     private int battleTurn = 1;
     private int battleDamage;
+    private Pokemon currentEnemyPokemon = new Pokemon("Fuecoco");
+
+    public Pokemon getCurrentEnemyPokemon() {
+        return currentEnemyPokemon;
+    }
+
+    public void setCurrentEnemyPokemon(Pokemon newEnemyPokemon) {
+        this.currentEnemyPokemon = newEnemyPokemon;
+    }
 
     public boolean isGameWon(Player player){
         if(player.getCapturedPkmnNum() == 4){gameWon = true;}
@@ -20,11 +31,13 @@ public class GameMaster {
 
     /**
      * from:
-     * https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
+     * https://mkyong.com/java/java-generate-random-integers-in-a-range/
      * @return randomly chosen index number for the wild pokemon's attack
      */
     public int chooseWildAttack(){
-        return 1 + (int)(Math.random() * ((4 - 1) + 1));}
+        Random random = new Random();
+        int randomNumber = random.nextInt((3 - 0) + 1) + 0;
+        return randomNumber;}
 
     /**
      * @param targetType elemental type of the pokemon that's being attacked
