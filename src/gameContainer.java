@@ -123,7 +123,15 @@ public class gameContainer {
                 originScreenTitleLabel.setText(myPlayer.getName() + "'s Progress So Far...");
                 originScreenTrainerAppearanceLabel.setIcon(new ImageIcon(gameContainer.class.getResource(myPlayer.getAppearance())));
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            
+             /** @author Jasmine
+                * Write player name to file
+                * There are problems adding the capturedPkmnInfo because of the html
+               **/
+                ReadWriteFile gameFile = new ReadWriteFile();
+                gameFile.write(myPlayer.getName());
             }
+           }
         });
     }
 
