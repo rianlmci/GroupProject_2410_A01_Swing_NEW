@@ -20,10 +20,10 @@ public class ParkLocation {
         this.location = location;
         if(
                 location == Location.NORTH ||
-                        location == Location.SOUTH ||
-                        location == Location.EAST ||
-                        location == Location.WEST ||
-                        location == Location.ORIGIN
+                location == Location.SOUTH ||
+                location == Location.EAST ||
+                location == Location.WEST ||
+                location == Location.ORIGIN
         )
         {
             switch(location){
