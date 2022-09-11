@@ -57,21 +57,12 @@ public class gameContainer {
     private JLabel originScreenStatsText;
     private JLabel originScreenTrainerAppearanceLabel;
     private JLabel originScreenTitleLabel;
-    private JLabel origin;
-    //private JLabel originScreenStatsText;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
+
+    //GAME PIECES
     private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco"));
     private GameMaster myGameMaster = new GameMaster();
 
-    //GAME PIECES
-    //This causes a crash when it is called, probably because it's not fully implemented. also I move this from game master for testing.
-    /*
-    private ParkLocation north = new ParkLocation(Location.NORTH);
-    private ParkLocation south = new ParkLocation(Location.SOUTH);
-    private ParkLocation east = new ParkLocation(Location.EAST);
-    private ParkLocation west = new ParkLocation(Location.WEST);
-    private ParkLocation origin = new ParkLocation(Location.ORIGIN);
-     */
 
     public gameContainer() {
         startGameBtn.addActionListener(new ActionListener() {

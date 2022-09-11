@@ -77,7 +77,6 @@ public class ParkLocation {
                     internalLocation = Location.ORIGIN;
                     description = "Home Screen";
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
-                    wildPokemon = new Pokemon(null);
                     break;
             }
         }

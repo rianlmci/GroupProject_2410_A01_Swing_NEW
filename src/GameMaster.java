@@ -10,13 +10,35 @@ public class GameMaster {
     private int battleTurn = 1;
     private int battleDamage;
     private Pokemon currentEnemyPokemon = new Pokemon("Fuecoco");
+    private ParkLocation north = new ParkLocation(Location.NORTH);
+    private ParkLocation south = new ParkLocation(Location.SOUTH);
+    private ParkLocation east = new ParkLocation(Location.EAST);
+    private ParkLocation west = new ParkLocation(Location.WEST);
+    private ParkLocation origin = new ParkLocation(Location.ORIGIN);
 
     public Pokemon getCurrentEnemyPokemon() {
         return currentEnemyPokemon;
     }
 
-    public void setCurrentEnemyPokemon(Pokemon newEnemyPokemon) {
-        this.currentEnemyPokemon = newEnemyPokemon;
+    /**
+     * Sets the current enemy pokemon based on the player's current location
+     * @param playerLocation
+     */
+    public void setCurrentEnemyPokemon(Location playerLocation) {
+        if(playerLocation == Location.ORIGIN || playerLocation == Location.PLAYERPARTY || playerLocation == null){
+            throw new IllegalArgumentException("There are no pokemon at these locations!");
+        }
+
+        switch(playerLocation) {
+            case NORTH:
+                this.currentEnemyPokemon = north.getWildPokemon();
+            case SOUTH:
+                this.currentEnemyPokemon = south.getWildPokemon();
+            case EAST:
+                this.currentEnemyPokemon = east.getWildPokemon();
+            case WEST:
+                this.currentEnemyPokemon = east.getWildPokemon();
+        }
     }
 
     public boolean isGameWon(Player player){
