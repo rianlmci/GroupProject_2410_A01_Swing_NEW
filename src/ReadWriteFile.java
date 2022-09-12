@@ -107,6 +107,6 @@ public class ReadWriteFile {
         myPlayer.addPkmntoPrty(new Pokemon("Pikachu"));
         myPlayer.getCapturedPokemon()[1].setName("Pika");
         ReadWriteFile myReadWriteFile = new ReadWriteFile();
-        myReadWriteFile.risWrite(myPlayer);
+        /*myReadWriteFile.risWrite(myPlayer);*/
     }
 }
