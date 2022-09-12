@@ -1,6 +1,6 @@
 import java.io.*;
 /*
- * @author Jasmine
+ * @author Jasmine Robbins
  */
 public class ReadWriteFile {
     String filename = "pokemonPlayers.txt";
@@ -30,6 +30,7 @@ public class ReadWriteFile {
     }
 
     /**
+     * Saves the players information to a text file.
      * @author original by Jasmine, modified by Rianna
      * @param myPlayer player info we are saving
      */
@@ -47,14 +48,22 @@ public class ReadWriteFile {
                 System.out.println("Error with File");
             }
 
-            //building the string we are writing to the file
+            //building the string we are writing to the file...
             StringBuilder newCSV = new StringBuilder();
 
             //to get the player's name:
             newCSV.append(myPlayer.getName() + ",");
 
+            //to get the players chosen appearance:
+            if (myPlayer.getAppearance().compareTo("/images/Feminine.png") == 0){
+                newCSV.append("feminine" + ",");
+            }
+
+            else{ newCSV.append("masculine" + ",");}
+
+            //to get all the players pokemon:
             for (int i = 0; i < myPlayer.getCapturedPokemon().length; i++) {
-                //check if current index of all their caught pokemon
+                //check if current index of all their caught pokemon isn't null
                 if (myPlayer.getCapturedPokemon()[i] != null) {
                     newCSV.append(myPlayer.getCapturedPokemon()[i].getName() + ","
                             + myPlayer.getCapturedPokemon()[i].getSpeciesName() + ",");
@@ -98,6 +107,6 @@ public class ReadWriteFile {
         myPlayer.addPkmntoPrty(new Pokemon("Pikachu"));
         myPlayer.getCapturedPokemon()[1].setName("Pika");
         ReadWriteFile myReadWriteFile = new ReadWriteFile();
-        /*myReadWriteFile.risWrite(myPlayer);*/
+        myReadWriteFile.risWrite(myPlayer);
     }
 }
