@@ -9,6 +9,12 @@ public class Player {
     Pokemon capturedPokemon [] = new Pokemon [4];
     private Pokemon currentBattlePokemon;
 
+    /**
+     * @author Rianna McIntyre
+     * @param name
+     * @param chosenAppearance
+     * @param starterPokemon
+     */
     Player(String name, String chosenAppearance, Pokemon starterPokemon){
         this.name= name;
         switch(chosenAppearance){
@@ -22,10 +28,18 @@ public class Player {
         this.capturedPokemon[0] = starterPokemon;
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @param chosenPokemon
+     */
     public void chooseStarterPokemon(Pokemon chosenPokemon){
         capturedPokemon[0] = chosenPokemon;
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @param caughtMon
+     */
     public void addPkmntoPrty(Pokemon caughtMon){
         for(int i = 1; i < capturedPokemon.length; i++){
             if(capturedPokemon[i] == null){
@@ -34,17 +48,30 @@ public class Player {
             }
         }
     }
+
+    /**
+     * @author Rianna McIntyre
+     */
     public void startBattle(){/*TODO*/} //might need to go in GameMaster
 
     /**
+     * @author Rianna McIntyre
      * @param bPkmn index location of the chosen battle pokemon in the players party
      */
     public void setCurrentBattlePokemon(int bPkmn){
         this.currentBattlePokemon = capturedPokemon[bPkmn];
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public int chooseBattleAttack(){return 0; /*TODO*/} //Might be redundant because the pokemon gets an int for its attack too??
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public String getName(){return this.name;}
 
     /**
@@ -53,10 +80,22 @@ public class Player {
      */
     public String getAppearance(){return this.appearance;}
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public Location getPlayerLocation(){return this.playerLocation;}
 
+    /**
+     * @author Rianna McIntyre
+     * @param playerLocation
+     */
     public void setPlayerLocation(Location playerLocation){this.playerLocation = playerLocation;}
 
+    /**
+     * @author Rianna McIntyre
+     * @param chosenAppearance
+     */
     public void setAppearance(String chosenAppearance){
         switch(chosenAppearance){
             case "feminine":
@@ -67,6 +106,10 @@ public class Player {
                 break;
         }}
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public int getCapturedPkmnNum(){
         int capturedCount = 0;
         for(int i = 0; i < capturedPokemon.length; i++){
@@ -78,6 +121,7 @@ public class Player {
     }
 
     /**
+     * @author Rianna McIntyre
      * Gives pokemon information as a String
      * @return html formatted string to put inside a JLabel
      */
@@ -97,12 +141,29 @@ public class Player {
         return capturedMonInfo.toString();
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public Pokemon getCurrentBattlePokemon() {
         return currentBattlePokemon;
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @param newName
+     */
     public void setName(String newName) {
         this.name = newName;
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
+    public Pokemon[] getCapturedPokemon() {
+        return capturedPokemon;
+    }
 }
+
+

@@ -7,8 +7,7 @@ import java.util.Random;
 public class GameMaster {
     private boolean gameWon = false;
     private boolean gameLost = false;
-    private int battleTurn = 1;
-    private int battleDamage;
+    //private int battleTurn = 1; redundant
     private Pokemon currentEnemyPokemon = new Pokemon("Fuecoco");
     private ParkLocation north = new ParkLocation(Location.NORTH);
     private ParkLocation south = new ParkLocation(Location.SOUTH);
@@ -16,13 +15,16 @@ public class GameMaster {
     private ParkLocation west = new ParkLocation(Location.WEST);
     private ParkLocation origin = new ParkLocation(Location.ORIGIN);
 
-    public Pokemon getCurrentEnemyPokemon() {
-        return currentEnemyPokemon;
-    }
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
+    public Pokemon getCurrentEnemyPokemon() {return currentEnemyPokemon;}
 
     /**
      * Sets the current enemy pokemon based on the player's current location
      * @param playerLocation
+     * @author Rianna McIntyre
      */
     public void setCurrentEnemyPokemon(Location playerLocation) {
         if(playerLocation == Location.ORIGIN || playerLocation == Location.PLAYERPARTY || playerLocation == null){
@@ -37,21 +39,32 @@ public class GameMaster {
             case EAST:
                 this.currentEnemyPokemon = east.getWildPokemon();
             case WEST:
-                this.currentEnemyPokemon = east.getWildPokemon();
+                this.currentEnemyPokemon = west.getWildPokemon();
         }
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @param player
+     * @return
+     */
     public boolean isGameWon(Player player){
         if(player.getCapturedPkmnNum() == 4){gameWon = true;}
         return gameWon;
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @param player
+     * @return
+     */
     public boolean isGameLost(Player player){
         if(player.getCurrentBattlePokemon().getHealth() <= 0){gameLost = true;}
         return gameLost;
     }
 
     /**
+     * @author Rianna McIntyre
      * from:
      * https://mkyong.com/java/java-generate-random-integers-in-a-range/
      * @return randomly chosen index number for the wild pokemon's attack
@@ -62,6 +75,7 @@ public class GameMaster {
         return randomNumber;}
 
     /**
+     * @author Rianna McIntyre
      * @param targetType elemental type of the pokemon that's being attacked
      * @param moveType  elemental type of the attackers pokemon move
      * @return damage to be applied to the target pokemon

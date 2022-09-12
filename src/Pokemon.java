@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.Locale;
-
 /**
  * The creatures that the player catches and does battle with.
  * @author Rianna McIntyre and Jasmine Robbins
@@ -20,6 +17,7 @@ public class Pokemon {
    };
 
    /**
+    * @author Rianna McIntyre
     * Pokemon constructor with nickname. Added this to work more easily with capturing pokemon.
     * @param speciesName name of the pokemon's species
     * @param nickName what the player chooses to call this pokemon.
@@ -58,8 +56,8 @@ public class Pokemon {
    }
 
    /**
+    * @author Rianna McIntyre
     * Pokemon constructor without nickname.
-    *
     * @param speciesName name of the pokemon species we're creating.
     */
    public Pokemon(String speciesName) {
@@ -95,23 +93,40 @@ public class Pokemon {
       }
    }
 
+   /**
+    * @author Rianna McIntyre
+    * @return
+    */
    public String getName() {
       return this.name;
    }
 
+   /**
+    * @author Rianna McIntyre
+    * @param newName
+    */
    public void setName(String newName) {
       this.name = newName;
    } //might not be needed due to constructor
 
+   /**
+    * @author Rianna McIntyre
+    * @return
+    */
    public int getHealth() {
       return this.health;
    }
 
+   /**
+    * @author Rianna McIntyre
+    * @param newHealth
+    */
    public void setHealth(int newHealth) {
       this.health = newHealth;
    }
 
    /**
+    * @author Rianna McIntyre
     * @return path of appearance's image as a string
     */
    public String getAppearance() {
@@ -123,6 +138,7 @@ public class Pokemon {
    } //might not be needed due to constructor
 
    /**
+    * @author Rianna McIntyre
     * @return the elemental type of the pokemon
     */
    public Type getType() {
@@ -130,21 +146,33 @@ public class Pokemon {
    }
 
    /**
-    *
+    * @author Rianna McIntyre
     * @return pokemon's type enum converted to a lowercase string
     */
    public String getTypeAsString(){
       return this.type.name().toLowerCase();
    }
 
+   /**
+    * @author Rianna McIntyre
+    * @return
+    */
    public Location getLocation() {
       return this.location;
    } //might be redundant??
 
+   /**
+    * @author Rianna McIntyre
+    * @param newLocation
+    */
    public void setLocation(Location newLocation) {
       this.location = newLocation;
    } //also might be redundant??
 
+   /**
+    * @author Rianna McIntyre
+    * @return
+    */
    public String getSpeciesName() {
       return speciesName;
    }
@@ -163,7 +191,7 @@ public class Pokemon {
    }
 
    /**
-    *
+    * @author Rianna McIntyre
     * @param moveChoice an index number 0 through 3 that corresponds to
     * the number of moves a pokemon can have (four moves).
     * @return the elemental type of the move at that index number for this pokemon in string form.
@@ -176,7 +204,7 @@ public class Pokemon {
    }
 
    /**
-    *
+    * @author Rianna McIntyre
     * @param moveChoice an index number 0 through 3 that corresponds to
     * the number of moves a pokemon can have (four moves).
     * @return the elemental type of the move at that index number for this pokemon in enum-type form.

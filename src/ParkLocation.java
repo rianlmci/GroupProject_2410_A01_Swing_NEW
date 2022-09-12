@@ -81,24 +81,49 @@ public class ParkLocation {
             }
         }
     }
+
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public String getParkLocName(){return this.externalLocationName;}
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public String getDescription(){return this.description;}
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public Location getInternalLocation() {return internalLocation;}
     /**
-     *
+     * @author Rianna McIntyre
      * @return path of appearance's image as a string
      */
     public String getAppearance(){return this.appearance;}
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public boolean isWildPkmnPresent(){
         if(this.wildPkmnPresent){return true;}
        return false;
     }
 
+    /**
+     * @author Rianna McIntyre
+     * @param isPresent
+     */
     public void setWildPkmnPresent(boolean isPresent) {this.wildPkmnPresent = isPresent;}
 
+    /**
+     * @author Rianna McIntyre
+     * @return
+     */
     public Pokemon getWildPokemon(){return this.wildPokemon;}
 
     public void setWildPokemon(Pokemon wildPkmn){this.wildPokemon = wildPkmn;} //Might be redundant due to constructor??

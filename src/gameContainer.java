@@ -65,20 +65,27 @@ public class gameContainer {
 
 
     public gameContainer() {
+        /**
+         * @author Rianna McIntyre
+         */
         startGameBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "playerSelect");
             }
         });
-
+        /**
+         * @author Rianna McIntyre
+         */
         loadGameBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO
             }
         });
-
+        /**
+         * @author Rianna McIntyre
+         */
         createTrainerBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -92,6 +99,9 @@ public class gameContainer {
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "pokemonSelect");
             }
         });
+        /**
+         * @author Rianna McIntyre
+         */
         pokemonSelectToOriginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -130,12 +140,12 @@ public class gameContainer {
                **/
                 ReadWriteFile gameFile = new ReadWriteFile();
                 gameFile.write(myPlayer.getName());
-            }
            }
         });
     }
 
     /**
+     * @author Rianna McIntyre
      * This is used in the battle screen.
      * It applies damage to the battling pokemon and adjusts their health accordingly.
      * also updates the battleUpdateLabel text if needed.
