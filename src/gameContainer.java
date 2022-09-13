@@ -171,12 +171,13 @@ public class gameContainer {
                     //testCode TODO remove line below when Jasmine makes her park locations:
                     northScreenTestWildPane.setVisible(false);
               }
-              //TODO replace placeholder JLabels with Jasmine's labels.
-              //JLabel northDescriptionLabel = new JLabel();
-              //northDescriptionLabel.setText(myGameMaster.north.getDescription());
+                //TODO replace placeholder JLabels with Jasmine's labels.
+                //JLabel northDescriptionLabel = new JLabel();
+                //northDescriptionLabel.setText(myGameMaster.north.getDescription());
                 //testCode TODO remove line below when Jasmine makes her park locations:
                 northDescriptionTESTLabel.setText(myGameMaster.north.getDescription());
-              //pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
+                //pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
+                //testCode TODO remove line below when Jasmine makes her park locations:
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "northTEST");
             }
         });
