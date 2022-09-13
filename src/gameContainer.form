@@ -5,8 +5,8 @@
       <xy x="20" y="20" width="600" height="600"/>
     </constraints>
     <properties>
-      <maximumSize width="600" height="600"/>
-      <minimumSize width="600" height="600"/>
+      <maximumSize width="600" height="500"/>
+      <minimumSize width="600" height="500"/>
       <preferredSize width="600" height="500"/>
     </properties>
     <border type="none"/>
@@ -143,9 +143,9 @@
         </constraints>
         <properties>
           <background color="-12828863"/>
-          <maximumSize width="600" height="600"/>
-          <minimumSize width="600" height="600"/>
-          <preferredSize width="600" height="600"/>
+          <maximumSize width="600" height="500"/>
+          <minimumSize width="600" height="500"/>
+          <preferredSize width="600" height="500"/>
         </properties>
         <border type="none"/>
         <children>
@@ -567,7 +567,7 @@
           <component id="46610" class="javax.swing.JLabel" binding="originScreenPaddingLeft">
             <constraints border-constraint="West"/>
             <properties>
-              <preferredSize width="50" height="16"/>
+              <preferredSize width="30" height="10"/>
               <text value=""/>
             </properties>
           </component>
@@ -576,21 +576,14 @@
             <properties>
               <background color="-16777216"/>
               <foreground color="-12828863"/>
-              <preferredSize width="50" height="16"/>
-              <text value=""/>
-            </properties>
-          </component>
-          <component id="2c598" class="javax.swing.JLabel" binding="originScreenPaddingBottom">
-            <constraints border-constraint="South"/>
-            <properties>
-              <preferredSize width="16" height="50"/>
+              <preferredSize width="30" height="10"/>
               <text value=""/>
             </properties>
           </component>
           <component id="fc5c3" class="javax.swing.JLabel" binding="originScreenPaddingTop">
             <constraints border-constraint="North"/>
             <properties>
-              <preferredSize width="16" height="50"/>
+              <preferredSize width="16" height="30"/>
               <text value=""/>
             </properties>
           </component>
@@ -604,18 +597,18 @@
               <component id="37d11" class="javax.swing.JLabel" binding="originScreenTitleLabel">
                 <constraints border-constraint="North"/>
                 <properties>
-                  <font size="36" style="0"/>
+                  <font size="26" style="0"/>
                   <foreground color="-4473925"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
-                  <text value="Your Progress So Far..."/>
+                  <text value="&lt;html&gt;&lt;u&gt;Your Progress So Far...&lt;/u&gt;&lt;/html&gt;"/>
                 </properties>
               </component>
               <component id="44896" class="javax.swing.JLabel" binding="originScreenStatsText">
                 <constraints border-constraint="East"/>
                 <properties>
                   <background color="-12828863"/>
-                  <font size="12" style="0"/>
+                  <font size="11" style="0"/>
                   <foreground color="-4473925"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
@@ -630,6 +623,157 @@
                   <text value=""/>
                 </properties>
               </component>
+              <grid id="c7fcc" binding="originScreenCenterSouthContainer" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints border-constraint="South"/>
+                <properties>
+                  <background color="-12828863"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="ac9dd" binding="originScreenDirectionsContainer" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="Last"/>
+                    <properties>
+                      <background color="-12828863"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="cbc43" class="javax.swing.JButton" binding="originToNorthBtn">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="120" height="50"/>
+                            <preferred-size width="120" height="50"/>
+                            <maximum-size width="120" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-10525081"/>
+                          <borderPainted value="true"/>
+                          <contentAreaFilled value="false"/>
+                          <defaultCapable value="true"/>
+                          <focusPainted value="false"/>
+                          <focusTraversalPolicyProvider value="false"/>
+                          <focusable value="false"/>
+                          <font size="9"/>
+                          <foreground color="-4473925"/>
+                          <horizontalTextPosition value="0"/>
+                          <minimumSize width="300" height="30"/>
+                          <opaque value="true"/>
+                          <preferredSize width="200" height="100"/>
+                          <requestFocusEnabled value="false"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="NORTH"/>
+                        </properties>
+                      </component>
+                      <component id="a793e" class="javax.swing.JButton" binding="originToSouthBtn">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="120" height="50"/>
+                            <preferred-size width="120" height="50"/>
+                            <maximum-size width="120" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-10525081"/>
+                          <borderPainted value="true"/>
+                          <contentAreaFilled value="false"/>
+                          <defaultCapable value="true"/>
+                          <focusPainted value="false"/>
+                          <focusTraversalPolicyProvider value="false"/>
+                          <focusable value="false"/>
+                          <font size="9" style="0"/>
+                          <foreground color="-4473925"/>
+                          <horizontalTextPosition value="0"/>
+                          <minimumSize width="300" height="30"/>
+                          <opaque value="true"/>
+                          <preferredSize width="200" height="100"/>
+                          <requestFocusEnabled value="false"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="SOUTH"/>
+                        </properties>
+                      </component>
+                      <component id="7d377" class="javax.swing.JButton" binding="originToEastBtn">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="120" height="50"/>
+                            <preferred-size width="120" height="50"/>
+                            <maximum-size width="120" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-10525081"/>
+                          <borderPainted value="true"/>
+                          <contentAreaFilled value="false"/>
+                          <defaultCapable value="true"/>
+                          <focusPainted value="false"/>
+                          <focusTraversalPolicyProvider value="false"/>
+                          <focusable value="false"/>
+                          <font size="9" style="0"/>
+                          <foreground color="-4473925"/>
+                          <horizontalTextPosition value="0"/>
+                          <minimumSize width="300" height="30"/>
+                          <opaque value="true"/>
+                          <preferredSize width="200" height="100"/>
+                          <requestFocusEnabled value="false"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="EAST"/>
+                        </properties>
+                      </component>
+                      <component id="9c639" class="javax.swing.JButton" binding="originToWestBtn">
+                        <constraints>
+                          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="120" height="50"/>
+                            <preferred-size width="120" height="50"/>
+                            <maximum-size width="120" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-10525081"/>
+                          <borderPainted value="true"/>
+                          <contentAreaFilled value="false"/>
+                          <defaultCapable value="true"/>
+                          <focusPainted value="false"/>
+                          <focusTraversalPolicyProvider value="false"/>
+                          <focusable value="false"/>
+                          <font size="9" style="0"/>
+                          <foreground color="-4473925"/>
+                          <horizontalTextPosition value="0"/>
+                          <minimumSize width="300" height="30"/>
+                          <opaque value="true"/>
+                          <preferredSize width="200" height="100"/>
+                          <requestFocusEnabled value="false"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="WEST"/>
+                        </properties>
+                      </component>
+                      <vspacer id="51a10">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                            <minimum-size width="-1" height="10"/>
+                          </grid>
+                        </constraints>
+                      </vspacer>
+                      <vspacer id="974ca">
+                        <constraints>
+                          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                            <minimum-size width="-1" height="30"/>
+                          </grid>
+                        </constraints>
+                      </vspacer>
+                    </children>
+                  </grid>
+                  <component id="d5f56" class="javax.swing.JLabel">
+                    <constraints border-constraint="Center"/>
+                    <properties>
+                      <font size="16" style="0"/>
+                      <foreground color="-4473925"/>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <text value="Choose a location..."/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
             </children>
           </grid>
         </children>
@@ -706,6 +850,195 @@
         <properties/>
         <border type="none"/>
         <children/>
+      </grid>
+      <grid id="68644" binding="northScreenTEST" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="northTEST"/>
+        </constraints>
+        <properties>
+          <background color="-12828863"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="11394" binding="northScreenTESTCenter" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="West"/>
+            <properties>
+              <background color="-16777216"/>
+              <minimumSize width="600" height="269"/>
+              <opaque value="true"/>
+              <preferredSize width="450" height="269"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="29b16" class="javax.swing.JLabel">
+                <constraints border-constraint="North"/>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <icon value="images/north/grandCanyon-brightAngel_RESIZED.jpeg"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <grid id="997df" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <opaque value="false"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <hspacer id="c7e5c">
+                    <constraints>
+                      <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="10" height="-1"/>
+                      </grid>
+                    </constraints>
+                  </hspacer>
+                  <component id="e7c33" class="javax.swing.JLabel" binding="northDescriptionTESTLabel">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12828863"/>
+                      <font size="11" style="0"/>
+                      <foreground color="-4473925"/>
+                      <horizontalAlignment value="0"/>
+                      <horizontalTextPosition value="0"/>
+                      <text value="(STATS GO HERE THIS READ HTML FOR SOME REASON)"/>
+                      <verticalAlignment value="1"/>
+                    </properties>
+                  </component>
+                  <vspacer id="bb0fd">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                  </vspacer>
+                  <component id="23aba" class="javax.swing.JButton" binding="northTESTToOrigin">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="120" height="30"/>
+                        <preferred-size width="120" height="30"/>
+                        <maximum-size width="120" height="30"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-10525081"/>
+                      <borderPainted value="true"/>
+                      <contentAreaFilled value="false"/>
+                      <defaultCapable value="true"/>
+                      <focusPainted value="false"/>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <focusable value="false"/>
+                      <font size="9"/>
+                      <foreground color="-4473925"/>
+                      <horizontalTextPosition value="0"/>
+                      <minimumSize width="300" height="30"/>
+                      <opaque value="true"/>
+                      <preferredSize width="200" height="100"/>
+                      <requestFocusEnabled value="false"/>
+                      <rolloverEnabled value="false"/>
+                      <text value="Back to Origin"/>
+                    </properties>
+                  </component>
+                  <vspacer id="416a4">
+                    <constraints>
+                      <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                  </vspacer>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="af322" binding="northScreenTestWildPane" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="East"/>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="5b42c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/Fuecoco.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="4e42f" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-12828863"/>
+                  <font size="10" style="3"/>
+                  <foreground color="-4473925"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <opaque value="false"/>
+                  <text value="A Wild Fuecoco Appeared!"/>
+                  <verticalAlignment value="1"/>
+                </properties>
+              </component>
+              <hspacer id="9a5ae">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="c02f0">
+                <constraints>
+                  <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="10" height="-1"/>
+                  </grid>
+                </constraints>
+              </hspacer>
+              <vspacer id="2e5cf">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <vspacer id="55c60">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="218c" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="120" height="30"/>
+                    <preferred-size width="120" height="30"/>
+                    <maximum-size width="120" height="30"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <actionCommand value=""/>
+                  <background color="-10525081"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <focusPainted value="false"/>
+                  <focusTraversalPolicyProvider value="false"/>
+                  <focusable value="false"/>
+                  <font size="9"/>
+                  <foreground color="-4473925"/>
+                  <horizontalTextPosition value="0"/>
+                  <minimumSize width="300" height="30"/>
+                  <opaque value="true"/>
+                  <preferredSize width="200" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="Catch it!"/>
+                </properties>
+              </component>
+              <vspacer id="72bad">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+            </children>
+          </grid>
+        </children>
       </grid>
     </children>
   </grid>

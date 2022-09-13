@@ -9,11 +9,11 @@ public class GameMaster {
     private boolean gameLost = false;
     //private int battleTurn = 1; redundant
     private Pokemon currentEnemyPokemon = new Pokemon("Fuecoco");
-    private ParkLocation north = new ParkLocation(Location.NORTH);
-    private ParkLocation south = new ParkLocation(Location.SOUTH);
-    private ParkLocation east = new ParkLocation(Location.EAST);
-    private ParkLocation west = new ParkLocation(Location.WEST);
-    private ParkLocation origin = new ParkLocation(Location.ORIGIN);
+    public static ParkLocation north = new ParkLocation(Location.NORTH);
+    public static ParkLocation south = new ParkLocation(Location.SOUTH);
+    public static ParkLocation east = new ParkLocation(Location.EAST);
+    public static ParkLocation west = new ParkLocation(Location.WEST);
+    public static ParkLocation origin = new ParkLocation(Location.ORIGIN);
 
     /**
      * @author Rianna McIntyre

@@ -127,7 +127,7 @@ public class Player {
      */
     public String getCapturedPkmnInfo(){
         StringBuilder capturedMonInfo = new StringBuilder();
-        capturedMonInfo.append("<html><center><p><h2>Captured Pokemon Total:</h2></p>"+this.getCapturedPkmnNum()+"<h2>Your Pokemon Team:</h2>");
+        capturedMonInfo.append("<html><center><p><h3>Captured Pokemon Total:</h3></p>"+this.getCapturedPkmnNum()+"<h3>Your Pokemon Team:</h3>");
         for (int i = 0; i < capturedPokemon.length; i++) {
             if(capturedPokemon[i] != null){
                 capturedMonInfo.append(
@@ -136,8 +136,8 @@ public class Player {
                     "<p>Health: " + capturedPokemon[i].getHealth() + "</p><p></p>"
                 );
             }
-        capturedMonInfo.append("</center></html>");
         }
+        capturedMonInfo.append("</center></html>");
         return capturedMonInfo.toString();
     }
 
@@ -163,6 +163,11 @@ public class Player {
      */
     public Pokemon[] getCapturedPokemon() {
         return capturedPokemon;
+    }
+
+    //= = = TEST CLIENT = = =//
+    public static void main(String[] args) {
+        //test code here if needed
     }
 }
 

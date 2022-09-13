@@ -86,6 +86,7 @@ public class Pokemon {
             break;
          case "Froakie":
             this.speciesName = "Froakie";
+            this.name = "Froakie";
             this.type = Type.WATER;
             this.appearance = "/images/Froakie.png"; //TODO
             //TODO SET MOVE SET TO 2D ARRAY

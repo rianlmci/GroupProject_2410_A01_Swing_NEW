@@ -1,7 +1,10 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class gameContainer {
     private JPanel pokemonGameContainerPane;
@@ -50,13 +53,23 @@ public class gameContainer {
     private JTextArea pokemonSelectNameInput;
     private JLabel originScreenPaddingLeft;
     private JLabel originScreenPaddingRight;
-    private JLabel originScreenPaddingBottom;
     private JLabel originScreenPaddingTop;
     private JPanel originScreenCenter;
     private JFormattedTextField originScreenFormattedStatsText;
     private JLabel originScreenStatsText;
     private JLabel originScreenTrainerAppearanceLabel;
     private JLabel originScreenTitleLabel;
+    private JButton originToNorthBtn;
+    private JButton originToSouthBtn;
+    private JButton originToEastBtn;
+    private JButton originToWestBtn;
+    private JPanel originScreenDirectionsContainer;
+    private JPanel originScreenCenterSouthContainer;
+    private JPanel northScreenTEST;
+    private JPanel northScreenTESTCenter;
+    private JLabel northDescriptionTESTLabel;
+    private JPanel northScreenTestWildPane;
+    private JButton northTESTToOrigin;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -129,9 +142,13 @@ public class gameContainer {
                     myPlayer.capturedPokemon[0].setName(myPlayer.capturedPokemon[0].getSpeciesName());
                 }
                 //saveGame(); //TODO
-                originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
-                originScreenTitleLabel.setText(myPlayer.getName() + "'s Progress So Far...");
+                originScreenTitleLabel.setText("<html><u><b>" + myPlayer.getName() + "'s Progress So Far...</b></u></html>");
                 originScreenTrainerAppearanceLabel.setIcon(new ImageIcon(gameContainer.class.getResource(myPlayer.getAppearance())));
+                originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
+                originToNorthBtn.setText(myGameMaster.north.getParkLocName());
+                originToSouthBtn.setText(myGameMaster.south.getParkLocName());
+                originToEastBtn.setText(myGameMaster.east.getParkLocName());
+                originToWestBtn.setText(myGameMaster.west.getParkLocName());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
             
              /** @author Jasmine
@@ -141,6 +158,80 @@ public class gameContainer {
                 ReadWriteFile gameFile = new ReadWriteFile();
                 gameFile.write(myPlayer.getName());
            }
+        });
+        /**
+         * @author Rianna McIntyre
+         */
+        originToNorthBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //test code TODO remove line below when Jasmine makes her park locations:
+                //myGameMaster.north.setWildPkmnPresent(false);
+                if(!myGameMaster.north.isWildPkmnPresent()){
+                    //testCode TODO remove line below when Jasmine makes her park locations:
+                    northScreenTestWildPane.setVisible(false);
+              }
+              //TODO replace placeholder JLabels with Jasmine's labels.
+              //JLabel northDescriptionLabel = new JLabel();
+              //northDescriptionLabel.setText(myGameMaster.north.getDescription());
+                //testCode TODO remove line below when Jasmine makes her park locations:
+                northDescriptionTESTLabel.setText(myGameMaster.north.getDescription());
+              //pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "northTEST");
+            }
+        });
+        /**
+         * @author Rianna McIntyre
+         */
+        originToSouthBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!myGameMaster.south.isWildPkmnPresent()){
+                    //TODO disable button to battle that pokemon on the parkscreen
+                }
+                //TODO replace placeholder JLabels with Jasmine's labels.
+                JLabel southDescriptionLabel = new JLabel();
+                southDescriptionLabel.setText(myGameMaster.south.getDescription());
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "south");
+            }
+        });
+        /**
+         * @author Rianna McIntyre
+         */
+        originToEastBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!myGameMaster.east.isWildPkmnPresent()){
+                    //TODO disable button to battle that pokemon on the parkscreen
+                }
+                //TODO replace placeholder JLabels with Jasmine's labels.
+                JLabel eastDescriptionLabel = new JLabel();
+                eastDescriptionLabel.setText(myGameMaster.east.getDescription());
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "east");
+            }
+        });
+        /**
+         * @author Rianna McIntyre
+         */
+        originToWestBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!myGameMaster.east.isWildPkmnPresent()){
+                    //TODO disable button to battle that pokemon on the parkscreen
+                }
+                //TODO replace placeholder JLabels with Jasmine's labels.
+                JLabel westDescriptionLabel = new JLabel();
+                westDescriptionLabel.setText(myGameMaster.east.getDescription());
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "west");
+            }
+        });
+
+        //TODO remove the method below when Jasmine makes her park locations:
+        northTESTToOrigin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            }
         });
     }
 
@@ -178,6 +269,7 @@ public class gameContainer {
 
         //Else, we update all the labels.
         else {
+            //TODO remove these test variables when the battle screen is implemented.
             JLabel battleUpdateLabel = new JLabel();
             JLabel playersStatsLabel = new JLabel();
             JLabel enemiesStatsLabel = new JLabel();
@@ -187,8 +279,7 @@ public class gameContainer {
                     + " and it did "
                     + myGameMaster.calculateDamage(
                     myGameMaster.getCurrentEnemyPokemon().getType(),
-                    myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourMoveChoice)
-            )
+                    myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourMoveChoice))
                     + " damage to the " + myGameMaster.getCurrentEnemyPokemon().getTypeAsString() + " type "
                     + myGameMaster.getCurrentEnemyPokemon().getName() + "!"
                     + "</p><p>"
@@ -197,8 +288,7 @@ public class gameContainer {
                     + " and it did "
                     + myGameMaster.calculateDamage(
                     myPlayer.getCurrentBattlePokemon().getType(),
-                    myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)
-            )
+                    myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove))
                     + " damage to the " + myPlayer.getCurrentBattlePokemon().getTypeAsString() + " type "
                     + myPlayer.getCurrentBattlePokemon().getName() + "!"
                     + "</p></center></html>"
@@ -221,8 +311,12 @@ public class gameContainer {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        //from: https://www.anycodings.com/1questions/597382/why-is-my-image-icon-not-showing-up-in-my-jframe
+        InputStream stream = gameContainer.class.getResourceAsStream("/images/newPokeballIcon.png");
+        ImageIcon icon = new ImageIcon(ImageIO.read(stream));
         JFrame frame = new JFrame("2410 Group Project A01: Pokemon");
+        frame.setIconImage(icon.getImage());
         frame.setContentPane(new gameContainer().pokemonGameContainerPane);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
