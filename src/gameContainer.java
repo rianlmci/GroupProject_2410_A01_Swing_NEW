@@ -165,6 +165,7 @@ public class gameContainer {
         originToNorthBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.NORTH);
                 //test code TODO remove line below when Jasmine makes her park locations:
                 //myGameMaster.north.setWildPkmnPresent(false);
                 if(!myGameMaster.north.isWildPkmnPresent()){
@@ -187,6 +188,7 @@ public class gameContainer {
         originToSouthBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.SOUTH);
                 if(!myGameMaster.south.isWildPkmnPresent()){
                     //TODO disable button to battle that pokemon on the parkscreen
                 }
@@ -202,6 +204,7 @@ public class gameContainer {
         originToEastBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.EAST);
                 if(!myGameMaster.east.isWildPkmnPresent()){
                     //TODO disable button to battle that pokemon on the parkscreen
                 }
@@ -217,12 +220,13 @@ public class gameContainer {
         originToWestBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(!myGameMaster.east.isWildPkmnPresent()){
+                myPlayer.setPlayerLocation(Location.WEST);
+                if(!myGameMaster.west.isWildPkmnPresent()){
                     //TODO disable button to battle that pokemon on the parkscreen
                 }
                 //TODO replace placeholder JLabels with Jasmine's labels.
                 JLabel westDescriptionLabel = new JLabel();
-                westDescriptionLabel.setText(myGameMaster.east.getDescription());
+                westDescriptionLabel.setText(myGameMaster.west.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "west");
             }
         });
