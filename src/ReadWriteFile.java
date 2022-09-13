@@ -63,6 +63,7 @@ public class ReadWriteFile {
 
             //to get all the players pokemon:
             for (int i = 0; i < myPlayer.getCapturedPokemon().length; i++) {
+
                 //check if current index of all their caught pokemon isn't null
                 if (myPlayer.getCapturedPokemon()[i] != null) {
                     newCSV.append(myPlayer.getCapturedPokemon()[i].getName() + ","
