@@ -66,9 +66,9 @@ public class gameContainer {
     private JPanel originScreenDirectionsContainer;
     private JPanel originScreenCenterSouthContainer;
     private JPanel northScreenTEST;
-    private JPanel northScreenTESTCenter;
+    private JPanel northScreenTESTWest;
     private JLabel northDescriptionTESTLabel;
-    private JPanel northScreenTestWildPane;
+    private JPanel northScreenTestEast;
     private JButton northTESTToOrigin;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
@@ -170,7 +170,7 @@ public class gameContainer {
                 //myGameMaster.north.setWildPkmnPresent(false);
                 if(!myGameMaster.north.isWildPkmnPresent()){
                     //testCode TODO remove line below when Jasmine makes her park locations:
-                    northScreenTestWildPane.setVisible(false);
+                    northScreenTestEast.setVisible(false);
               }
                 //TODO replace placeholder JLabels with Jasmine's labels.
                 //JLabel northDescriptionLabel = new JLabel();
