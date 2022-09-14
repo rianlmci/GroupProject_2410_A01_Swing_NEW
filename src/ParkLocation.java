@@ -33,7 +33,7 @@ public class ParkLocation {
                     description = "<html><p><h3>The Grand Canyon:</h3></p>" +
                             "<p>is considered one of the finest examples of arid-land erosion in the world." +
                             " Incised by the Colorado River, the canyon is immense, averaging 4,000 feet deep for its " +
-                            "entire 277 miles. It is 6,000 feet deep at its deepest point and 18 miles at its widest (NPS).</p>  </html>";
+                            "entire 277 miles. It is 6,000 feet deep at its deepest point and 18 miles at its widest (NPS).</p></html>";
                     this.appearance = "/images/north/grand-canyon-aerial-map.jpeg";
                     wildPokemon = new Pokemon("Fuecoco");
                     break;
@@ -44,7 +44,7 @@ public class ParkLocation {
                     description = "<html><p><h3>Yosemite:</h3></p>" +
                             "<p>It is internationally recognized for its granite cliffs," +
                             " waterfalls, clear streams, giant sequoia groves, lakes, mountains, meadows, " +
-                            "glaciers, and biological diversity.</p>  </html>";
+                            "glaciers, and biological diversity.</p></html>";
                     this.appearance = "/images/south/yosemite.jpeg";
                     wildPokemon = new Pokemon("Turtwig");
                     break;
@@ -52,9 +52,9 @@ public class ParkLocation {
                 case EAST:
                     externalLocationName = "Banff";
                     internalLocation = Location.EAST;
-                    description = "<html> <p><h3>Banff:</h3></p>" +
+                    description = "<html><p><h3>Banff:</h3></p>" +
                             "<p>Banff National Park is famous for its surreally coloured lakes, majestic mountains," +
-                            "ice fields, and glaciers.</p>  </html>";
+                            "ice fields, and glaciers.</p></html>";
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
                     wildPokemon = new Pokemon("Froakie");
                     break;
@@ -62,11 +62,11 @@ public class ParkLocation {
                 case WEST:
                     externalLocationName = "Zion";
                     internalLocation = Location.WEST;
-                    description = "<html> <p><h3>Zion:</h3></p>" +
+                    description = "<html><p><h3>Zion:</h3></p>" +
                             "<p>Consisting of high plateaus, a maze of narrow, deep, sandstone canyons, and the Virgin " +
                             "River and its tributaries. Zion also has 2,000-foot Navajo Sandstone cliffs, " +
                             "pine- and juniper-clad slopes, and seeps, springs, and waterfalls supporting lush " +
-                            "and colorful hanging gardens.</p>  </html>";
+                            "and colorful hanging gardens.</p></html>";
                     //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
                     wildPokemon = new Pokemon("Pikachu");
                     break;
