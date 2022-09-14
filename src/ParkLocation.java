@@ -13,7 +13,7 @@ public class ParkLocation {
     private Pokemon wildPokemon = new Pokemon("Pikachu");
 
     /**
-     * Overloaded constructor for a park location
+     * Overloaded constructor for a park location.
      * @author Jasmine Robbins for names descriptions and images. Rianna for everything else.
      * @param location cardinal direction as enum that sets everything up based on method presets.
      */

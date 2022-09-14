@@ -32,7 +32,7 @@ public class ReadWriteFile {
     /**
      * Saves the players information to a text file.
      * @author original by Jasmine, modified by Rianna
-     * @param myPlayer player info we are saving
+     * @param myPlayer player info we are saving.
      */
     public void risWrite(Player myPlayer) {
         File file = new File(filename);
