@@ -18,8 +18,8 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * Pokemon constructor with nickname. Added this to work more easily with capturing pokemon.
-    * @param speciesName name of the pokemon's species
+    * Overloaded pokemon constructor with nickname. Added this to work more easily with capturing pokemon.
+    * @param speciesName name of the pokemon's species. First letter has to be capitalized.
     * @param nickName what the player chooses to call this pokemon.
     */
    public Pokemon(String speciesName, String nickName) {
@@ -56,9 +56,10 @@ public class Pokemon {
    }
 
    /**
+    * Overloaded
     * @author Rianna McIntyre
-    * Pokemon constructor without nickname.
-    * @param speciesName name of the pokemon species we're creating.
+    * Overloaded pokemon constructor without a nickname.
+    * @param speciesName name of the pokemon species we're creating. First letter has to be capitalized.
     */
    public Pokemon(String speciesName) {
 
@@ -96,7 +97,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @return
+    * @return the pokemon's current name/nickname
     */
    public String getName() {
       return this.name;
@@ -104,7 +105,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @param newName
+    * @param newName the new nickname for this pokemon
     */
    public void setName(String newName) {
       this.name = newName;
@@ -112,7 +113,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @return
+    * @return the pokemons current health as an int
     */
    public int getHealth() {
       return this.health;
@@ -120,7 +121,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @param newHealth
+    * @param newHealth the pokemons current health as an int
     */
    public void setHealth(int newHealth) {
       this.health = newHealth;
@@ -134,13 +135,16 @@ public class Pokemon {
       return this.appearance;
    }
 
+   /**
+    * @param newAppearance new image path to use as the pokemon's appearance.
+    */
    public void setAppearance(String newAppearance) {
       this.appearance = newAppearance;
    } //might not be needed due to constructor
 
    /**
     * @author Rianna McIntyre
-    * @return the elemental type of the pokemon
+    * @return the elemental type enum of the pokemon.
     */
    public Type getType() {
       return this.type;
@@ -148,7 +152,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @return pokemon's type enum converted to a lowercase string
+    * @return pokemon's type enum converted to a lowercase string.
     */
    public String getTypeAsString(){
       return this.type.name().toLowerCase();
@@ -156,7 +160,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @return
+    * @return the pokemon's current location as an enum of type Location.
     */
    public Location getLocation() {
       return this.location;
@@ -164,7 +168,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @param newLocation
+    * @param newLocation the pokemons new location as an enum of type Location.
     */
    public void setLocation(Location newLocation) {
       this.location = newLocation;
@@ -172,7 +176,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @return
+    * @return name of this this species of pokemon.
     */
    public String getSpeciesName() {
       return speciesName;

@@ -17,12 +17,13 @@ public class GameMaster {
 
     /**
      * @author Rianna McIntyre
-     * @return
+     * @return the current pokemon the player is battling
      */
     public Pokemon getCurrentEnemyPokemon() {return currentEnemyPokemon;}
 
     /**
-     * Sets the current enemy pokemon based on the player's current location
+     * Sets the current enemy pokemon based on the player's current location.
+     * should send something like "myPlayer.getLocation()" to it.
      * @param playerLocation
      * @author Rianna McIntyre
      */
@@ -45,8 +46,8 @@ public class GameMaster {
 
     /**
      * @author Rianna McIntyre
-     * @param player
-     * @return
+     * @param player the player we are inspecting if they won the game or not.
+     * @return if the game is won. True or False.
      */
     public boolean isGameWon(Player player){
         if(player.getCapturedPkmnNum() == 4){gameWon = true;}
@@ -55,8 +56,8 @@ public class GameMaster {
 
     /**
      * @author Rianna McIntyre
-     * @param player
-     * @return
+     * @param player the player we are inspecting if they won the game or not.
+     * @return if the game is lost. True or False.
      */
     public boolean isGameLost(Player player){
         if(player.getCurrentBattlePokemon().getHealth() <= 0){gameLost = true;}
@@ -64,6 +65,7 @@ public class GameMaster {
     }
 
     /**
+     * Picks an index value for the wild pokemons attack that will eventually go to its 2DArray of moves.
      * @author Rianna McIntyre
      * from:
      * https://mkyong.com/java/java-generate-random-integers-in-a-range/
@@ -75,6 +77,7 @@ public class GameMaster {
         return randomNumber;}
 
     /**
+     * calculates how much damage is going to be subtracted from the pokemon's health.
      * @author Rianna McIntyre
      * @param targetType elemental type of the pokemon that's being attacked
      * @param moveType  elemental type of the attackers pokemon move

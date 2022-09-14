@@ -13,8 +13,9 @@ public class ParkLocation {
     private Pokemon wildPokemon = new Pokemon("Pikachu");
 
     /**
+     * Overloaded constructor for a park location
      * @author Jasmine Robbins for names descriptions and images. Rianna for everything else.
-     * @param location
+     * @param location cardinal direction as enum that sets everything up based on method presets.
      */
     public ParkLocation(Location location){
         this.location = location;
@@ -84,19 +85,19 @@ public class ParkLocation {
 
     /**
      * @author Rianna McIntyre
-     * @return
+     * @return the eternal location name of this area as a string. EX."The Grand Canyon"
      */
     public String getParkLocName(){return this.externalLocationName;}
 
     /**
      * @author Rianna McIntyre
-     * @return
+     * @return html formatted string describing the ParkLocation. The string is intended to go inside a Jlabel.
      */
     public String getDescription(){return this.description;}
 
     /**
      * @author Rianna McIntyre
-     * @return
+     * @return the enum that is this ParkLocation's cardinal direction. EX. "Location.NORTH"
      */
     public Location getInternalLocation() {return internalLocation;}
     /**
@@ -107,7 +108,7 @@ public class ParkLocation {
 
     /**
      * @author Rianna McIntyre
-     * @return
+     * @return boolean value of if a wild pokemon is in this ParkLocation.
      */
     public boolean isWildPkmnPresent(){
         if(this.wildPkmnPresent){return true;}
@@ -115,6 +116,7 @@ public class ParkLocation {
     }
 
     /**
+     * Changes the boolean value of if a wild pokemon is in this ParkLocation or not.
      * @author Rianna McIntyre
      * @param isPresent
      */
@@ -122,7 +124,7 @@ public class ParkLocation {
 
     /**
      * @author Rianna McIntyre
-     * @return
+     * @return the pokemon object at this ParkLocation.
      */
     public Pokemon getWildPokemon(){return this.wildPokemon;}
 
