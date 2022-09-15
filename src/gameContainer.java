@@ -70,6 +70,15 @@ public class gameContainer {
     private JLabel northDescriptionTESTLabel;
     private JPanel northScreenTestEast;
     private JButton northTESTToOrigin;
+    private JButton returnToOriginN;
+    private JButton returnToOriginS;
+    private JButton returnToOriginE;
+    private JButton returnToOriginW;
+    private JLabel addToPartyLabel;
+    private JTextField nameCaughtPokemon;
+    private JButton addPokemonToParty;
+    private JLabel caughtAll;
+    private JLabel gameWon;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -153,33 +162,28 @@ public class gameContainer {
             
              /** @author Jasmine
                 * Write player name to file
-                * There are problems adding the capturedPkmnInfo because of the html
+                *
                **/
                 ReadWriteFile gameFile = new ReadWriteFile();
-                gameFile.write(myPlayer.getName());
+                gameFile.risWrite(myPlayer);
            }
         });
         /**
          * @author Rianna McIntyre
+         * @author Jasmine modified
          */
         originToNorthBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.NORTH);
-                //test code TODO remove line below when Jasmine makes her park locations:
-                //myGameMaster.north.setWildPkmnPresent(false);
+                myGameMaster.north.setWildPkmnPresent(false);
+                myGameMaster.setCurrentEnemyPokemon(Location.NORTH);
                 if(!myGameMaster.north.isWildPkmnPresent()){
-                    //testCode TODO remove line below when Jasmine makes her park locations:
-                    northScreenTestEast.setVisible(false);
+                    northScreen.setVisible(false);
               }
-                //TODO replace placeholder JLabels with Jasmine's labels.
-                //JLabel northDescriptionLabel = new JLabel();
-                //northDescriptionLabel.setText(myGameMaster.north.getDescription());
-                //testCode TODO remove line below when Jasmine makes her park locations:
-                northDescriptionTESTLabel.setText(myGameMaster.north.getDescription());
-                //pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
-                //testCode TODO remove line below when Jasmine makes her park locations:
-                pkmnGameContainerDeck.show(pokemonGameContainerPane, "northTEST");
+                JLabel grandCanyonLabel = new JLabel();
+                grandCanyonLabel.setText(myGameMaster.north.getDescription());
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
             }
         });
         /**
@@ -189,44 +193,47 @@ public class gameContainer {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.SOUTH);
+                myGameMaster.south.setWildPkmnPresent(false);
+                myGameMaster.setCurrentEnemyPokemon(Location.SOUTH);
                 if(!myGameMaster.south.isWildPkmnPresent()){
-                    //TODO disable button to battle that pokemon on the parkscreen
+                    southScreen.setVisible(false);
                 }
-                //TODO replace placeholder JLabels with Jasmine's labels.
-                JLabel southDescriptionLabel = new JLabel();
-                southDescriptionLabel.setText(myGameMaster.south.getDescription());
+                JLabel yosemiteLabel = new JLabel();
+                yosemiteLabel.setText(myGameMaster.south.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "south");
             }
         });
         /**
          * @author Rianna McIntyre
+         * @author Jasmine
          */
         originToEastBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.EAST);
+                myGameMaster.setCurrentEnemyPokemon(Location.EAST);
                 if(!myGameMaster.east.isWildPkmnPresent()){
-                    //TODO disable button to battle that pokemon on the parkscreen
+                    eastScreen.setVisible(false);
                 }
-                //TODO replace placeholder JLabels with Jasmine's labels.
-                JLabel eastDescriptionLabel = new JLabel();
-                eastDescriptionLabel.setText(myGameMaster.east.getDescription());
+                JLabel denaliLabel = new JLabel();
+                denaliLabel.setText(myGameMaster.east.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "east");
             }
         });
         /**
          * @author Rianna McIntyre
+         * @author Jasmine
          */
         originToWestBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.WEST);
+                myGameMaster.setCurrentEnemyPokemon(Location.WEST);
                 if(!myGameMaster.west.isWildPkmnPresent()){
-                    //TODO disable button to battle that pokemon on the parkscreen
+                    westScreen.setVisible(false);
                 }
-                //TODO replace placeholder JLabels with Jasmine's labels.
-                JLabel westDescriptionLabel = new JLabel();
-                westDescriptionLabel.setText(myGameMaster.west.getDescription());
+                JLabel yellowstoneLabel = new JLabel();
+                yellowstoneLabel.setText(myGameMaster.west.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "west");
             }
         });
@@ -235,6 +242,38 @@ public class gameContainer {
         northTESTToOrigin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            }
+        });
+        /**
+         * @author Jasmine
+         * Return to origin buttons for Cardinal Screens
+         */
+        returnToOriginN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.ORIGIN);
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            }
+        });
+        returnToOriginS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.ORIGIN);
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            }
+        });
+        returnToOriginE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.ORIGIN);
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            }
+        });
+        returnToOriginW.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                myPlayer.setPlayerLocation(Location.ORIGIN);
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
             }
         });

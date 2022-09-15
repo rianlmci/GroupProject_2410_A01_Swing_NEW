@@ -784,7 +784,14 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="47a73" class="javax.swing.JButton" binding="returnToOriginN">
+            <constraints border-constraint="South"/>
+            <properties>
+              <text value="Return To Origin"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <grid id="38375" binding="southScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
@@ -792,7 +799,14 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="5ae49" class="javax.swing.JButton" binding="returnToOriginS">
+            <constraints border-constraint="South"/>
+            <properties>
+              <text value="Return To Origin"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <grid id="55ba7" binding="eastScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
@@ -800,7 +814,14 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="b7ce9" class="javax.swing.JButton" binding="returnToOriginE">
+            <constraints border-constraint="South"/>
+            <properties>
+              <text value="Return To Origin"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <grid id="cb5ee" binding="westScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
@@ -808,7 +829,14 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="8e8a0" class="javax.swing.JButton" binding="returnToOriginW">
+            <constraints border-constraint="South"/>
+            <properties>
+              <text value="Return To Origin"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <grid id="85054" binding="addCaughtPkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
@@ -816,7 +844,24 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="22e5a" class="javax.swing.JLabel" binding="addToPartyLabel">
+            <constraints border-constraint="North"/>
+            <properties>
+              <text value="Hooray, you did it! What will you name this Pokemon?"/>
+            </properties>
+          </component>
+          <component id="790a5" class="javax.swing.JTextField" binding="nameCaughtPokemon">
+            <constraints border-constraint="South"/>
+            <properties/>
+          </component>
+          <component id="f8647" class="javax.swing.JButton" binding="addPokemonToParty">
+            <constraints border-constraint="East"/>
+            <properties>
+              <text value="Continue"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <grid id="17969" binding="chooseBattlePkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
@@ -842,14 +887,31 @@
         <border type="none"/>
         <children/>
       </grid>
-      <grid id="5b0d5" binding="gameWonScreen" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="5b0d5" binding="gameWonScreen" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <card name="Card1"/>
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="8d2a9" class="javax.swing.JLabel" binding="caughtAll">
+            <constraints>
+              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="After winning that last battle, you’ve finally caught them all!"/>
+            </properties>
+          </component>
+          <component id="c6e02" class="javax.swing.JLabel" binding="gameWon">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="YOU WIN!"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <grid id="68644" binding="northScreenTEST" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
