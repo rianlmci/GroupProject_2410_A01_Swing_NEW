@@ -51,24 +51,24 @@ public class ParkLocation {
                     break;
 
                 case EAST:
-                    externalLocationName = "Banff";
+                    externalLocationName = "Denali";
                     internalLocation = Location.EAST;
-                    description = "<html><p><h3>Banff:</h3></p>" +
-                            "<p>Banff National Park is famous for its surreally coloured lakes, majestic mountains," +
-                            "ice fields, and glaciers.</p></html>";
-                    //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
+                    description = "<html><p><h3>Denali:</h3></p>" +
+                            "<p>National Park and Preserve protects more than six million acres of wild " +
+                            "interior Alaska. The south side of the reserve is dominated by the mountain and its " +
+                            "acolyte peaks in the Alaska Range, while to the north the park includes a vast range of" +
+                            "taiga and tundra lands, home to a wealth of animal life.</p></html>";
+                    this.appearance = "/images/east/denali-map.jpeg";
                     wildPokemon = new Pokemon("Froakie");
                     break;
 
                 case WEST:
-                    externalLocationName = "Zion";
+                    externalLocationName = "Yellowstone";
                     internalLocation = Location.WEST;
                     description = "<html><p><h3>Zion:</h3></p>" +
-                            "<p>Consisting of high plateaus, a maze of narrow, deep, sandstone canyons, and the Virgin " +
-                            "River and its tributaries. Zion also has 2,000-foot Navajo Sandstone cliffs, " +
-                            "pine- and juniper-clad slopes, and seeps, springs, and waterfalls supporting lush " +
-                            "and colorful hanging gardens.</p></html>";
-                    //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
+                            "<p>Yellowstone National Park sits on top of a dormant volcano and is home to more" +
+                            " geysers and hot springs than any other place on earth.</p></html>";
+                    this.appearance = "/images/west/yellowstone-map.jpeg";
                     wildPokemon = new Pokemon("Pikachu");
                     break;
 
@@ -77,7 +77,7 @@ public class ParkLocation {
                     externalLocationName = "Home";
                     internalLocation = Location.ORIGIN;
                     description = "Home Screen";
-                    //TODO SET THE IMAGE PATH AS A STRING, SHOULD BE this.appearance = "/images/imageName.extension";
+                    this.appearance = "/images/origin.jpeg";
                     break;
             }
         }
