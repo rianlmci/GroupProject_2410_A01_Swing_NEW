@@ -869,7 +869,80 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <grid id="c502f" layout-manager="GridLayoutManager" row-count="4" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="557d7" class="javax.swing.JLabel" binding="battlePokemon2">
+                <constraints>
+                  <grid row="0" column="2" row-span="3" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Battle Pokemon 2"/>
+                </properties>
+              </component>
+              <component id="58f86" class="javax.swing.JLabel" binding="battlePokemon4">
+                <constraints>
+                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Battle Pokemon 4"/>
+                </properties>
+              </component>
+              <component id="cc92c" class="javax.swing.JLabel" binding="battlePokemon3">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Battle Pokemon 3"/>
+                </properties>
+              </component>
+              <component id="5f99d" class="javax.swing.JRadioButton" binding="radioBattlePoke3">
+                <constraints>
+                  <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="3"/>
+                </properties>
+              </component>
+              <component id="5eddb" class="javax.swing.JLabel" binding="battlePokemon1">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Battle Pokemon 1"/>
+                </properties>
+              </component>
+              <component id="b1ec5" class="javax.swing.JRadioButton" binding="radioBattlePoke2">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="2"/>
+                </properties>
+              </component>
+              <component id="22718" class="javax.swing.JRadioButton" binding="radioBattlePoke1">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="1"/>
+                </properties>
+              </component>
+              <component id="6bc2d" class="javax.swing.JRadioButton" binding="radioBattlePoke4">
+                <constraints>
+                  <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="4"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
       </grid>
       <grid id="7a332" binding="battleScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>

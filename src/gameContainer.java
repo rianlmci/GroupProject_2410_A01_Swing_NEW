@@ -79,6 +79,14 @@ public class gameContainer {
     private JButton addPokemonToParty;
     private JLabel caughtAll;
     private JLabel gameWon;
+    private JRadioButton radioBattlePoke2;
+    private JRadioButton radioBattlePoke1;
+    private JRadioButton radioBattlePoke3;
+    private JLabel battlePokemon1;
+    private JLabel battlePokemon3;
+    private JLabel battlePokemon2;
+    private JRadioButton radioBattlePoke4;
+    private JLabel battlePokemon4;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -275,6 +283,13 @@ public class gameContainer {
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.ORIGIN);
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+            }
+        });
+        // Radio Buttons for Battle Pokemon
+        radioBattlePoke1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                battlePokemon1.setIcon(new ImageIcon("/images/Turtwig.png"));
             }
         });
     }
