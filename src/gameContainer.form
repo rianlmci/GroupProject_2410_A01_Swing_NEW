@@ -121,7 +121,7 @@
                       <background color="-10525081"/>
                       <borderPainted value="true"/>
                       <contentAreaFilled value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <focusPainted value="false"/>
                       <focusable value="false"/>
                       <font style="0"/>
@@ -129,6 +129,7 @@
                       <minimumSize width="300" height="30"/>
                       <preferredSize width="200" height="100"/>
                       <text value="Load Game"/>
+                      <visible value="true"/>
                     </properties>
                   </component>
                 </children>
@@ -774,6 +775,10 @@
                   </component>
                 </children>
               </grid>
+              <component id="fae92" class="javax.swing.JTextField" binding="playerData">
+                <constraints border-constraint="Center"/>
+                <properties/>
+              </component>
             </children>
           </grid>
         </children>

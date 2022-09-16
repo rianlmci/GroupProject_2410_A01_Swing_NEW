@@ -3,8 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class gameContainer {
     private JPanel pokemonGameContainerPane;
@@ -87,6 +86,7 @@ public class gameContainer {
     private JLabel battlePokemon2;
     private JRadioButton radioBattlePoke4;
     private JLabel battlePokemon4;
+    private JTextField playerData;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -106,13 +106,26 @@ public class gameContainer {
         });
         /**
          * @author Rianna McIntyre
+         * @author Jasmine
          */
         loadGameBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Loads player data from file
+                ReadWriteFile test = new ReadWriteFile();
+                try {
+                    test.loadPlayerData();
+                    // Test label
+                    playerData.setText(test.loadPlayerData());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+
                 //TODO
             }
         });
+
         /**
          * @author Rianna McIntyre
          */
