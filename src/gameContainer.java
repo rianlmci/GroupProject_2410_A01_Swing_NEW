@@ -78,15 +78,19 @@ public class gameContainer {
     private JButton addPokemonToParty;
     private JLabel caughtAll;
     private JLabel gameWon;
-    private JRadioButton radioBattlePoke2;
     private JRadioButton radioBattlePoke1;
-    private JRadioButton radioBattlePoke3;
-    private JLabel battlePokemon1;
-    private JLabel battlePokemon3;
-    private JLabel battlePokemon2;
-    private JRadioButton radioBattlePoke4;
-    private JLabel battlePokemon4;
+    private JLabel battleFroakieLabel;
     private JTextField playerData;
+    private JLabel gameOver;
+    private JLabel gameOverLabel;
+    private JRadioButton fuecocoBattleBtn;
+    private JRadioButton pikachuBattleBtn;
+    private JRadioButton turtwigRadioButton;
+    private JLabel battleFuecocoLabel;
+    private JLabel battlePikachuLabel;
+    private JLabel battleTurtwigLabel;
+    private JLabel battlePokemonLabel;
+    private JRadioButton froakieBattleBtn;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -115,16 +119,17 @@ public class gameContainer {
                 ReadWriteFile test = new ReadWriteFile();
                 try {
                     test.loadPlayerData();
-                    // Test label
-                    playerData.setText(test.loadPlayerData());
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
-
-                //TODO
+                //  test.loadGameMasterData();
+                // Test label
+                playerData.setText(test.loadGameMasterData());
+                pkmnGameContainerDeck.show(pokemonGameContainerPane,"origin");
             }
+
         });
+
 
         /**
          * @author Rianna McIntyre
@@ -302,7 +307,7 @@ public class gameContainer {
         radioBattlePoke1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                battlePokemon1.setIcon(new ImageIcon("/images/Turtwig.png"));
+                battleFroakieLabel.setIcon(new ImageIcon("/images/Turtwig.png"));
             }
         });
     }

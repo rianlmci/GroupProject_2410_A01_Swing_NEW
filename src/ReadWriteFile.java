@@ -6,28 +6,6 @@ public class ReadWriteFile {
     String filename = "pokemonPlayers.txt";
     Player myPlayer = new Player("Jasmine", "feminine", new Pokemon("Fuecoco"));
 
-    public void write(String name) {
-        File file = new File(filename);
-        boolean append = false;
-        try{
-            BufferedWriter bw = null;
-            if(file.exists())
-            {
-                append = true;
-                bw = new BufferedWriter(new FileWriter(new File(filename), append));
-            }
-            else{
-                append = false;
-                System.out.println("Error with File");
-            }
-            bw.write(name);
-            bw.newLine();
-            bw.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Saves the players information to a text file.
@@ -42,7 +20,6 @@ public class ReadWriteFile {
             if (file.exists()) {
                 append = true;
             }
-
             else {
                 append = false;
                 System.out.println("Error with File");
@@ -86,6 +63,58 @@ public class ReadWriteFile {
         catch (IOException e) {e.printStackTrace();}
     }
 
+    /**
+     * @author Jasmine
+     * Load player data on loadGameBtn
+     * loaadPlayerData gets all of the player information
+     * loadGameMasterData sets isWildPkmn to false if pokemon is already found
+     * @return
+     */
+    public String loadPlayerData() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        try {
+            String line = br.readLine();
+            System.out.print("TESTING 123 " + line);
+            br.close();
+            return line;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public String loadGameMasterData() {
+        ParkLocation location = new ParkLocation(Location.ORIGIN);
+        String line = "";
+        String splitBy = ",";
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filename));
+            while((line = br.readLine()) != null){
+                    String[] poke = line.split(splitBy);
+
+                    for(String caught : poke) {
+                        if(caught.equals("Fuecoco")) {
+                            location.setWildPkmnPresent(false);
+                            System.out.print(caught + " ");
+                        }
+                        else if(caught.equals("Turtwig")){
+                            location.setWildPkmnPresent(false);
+                        }
+                        else if(caught.equals("Froakie")){
+                            location.setWildPkmnPresent(false);
+                        }
+                        else if(caught.equals("Pikachu")){
+                            location.setWildPkmnPresent(false);
+                        }
+                        else {location.setWildPkmnPresent(true);}
+                    }
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;}
+
     /*  Create File
     public static void main(String[] args) {
         try {
@@ -111,3 +140,4 @@ public class ReadWriteFile {
         /*myReadWriteFile.risWrite(myPlayer);*/
     }
 }
+
