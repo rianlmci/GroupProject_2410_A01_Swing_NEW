@@ -963,6 +963,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <selected value="true"/>
                   <text value="Froakie"/>
                 </properties>
               </component>
@@ -1489,6 +1490,13 @@
       <member id="c0b0b"/>
       <member id="225bc"/>
       <member id="74699"/>
+    </group>
+    <group name="buttonGroup3">
+      <member id="f46e0"/>
+      <member id="f46e0"/>
+      <member id="1e0d0"/>
+      <member id="17f56"/>
+      <member id="4bb1a"/>
     </group>
   </buttonGroups>
 </form>

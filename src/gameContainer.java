@@ -203,10 +203,10 @@ public class gameContainer {
                 originToWestBtn.setText(myGameMaster.west.getParkLocName());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
 
-             /** @author Jasmine
-                * Write player name to file
-                *
-               **/
+             /**
+              * @author Jasmine
+              * Write player name to file
+              */
                 ReadWriteFile gameFile = new ReadWriteFile();
                 gameFile.risWrite(myPlayer);
            }
@@ -456,6 +456,23 @@ public class gameContainer {
         battlePlayersMove1Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(1));
         battlePlayersMove2Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(2));
         battlePlayersMove3Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(3));
+    }
+
+    /**
+     * @author Rianna McIntyre
+     * Sets up current battle pokemon based on radio button selections
+     * on chooseBattlePkmnScreen.
+     */
+    public void setUpBattlePkmnFromRadio(){
+        //TODO fix labels in this if label names change
+        if (froakieBattleBtn.isSelected()){myPlayer.setCurrentBattlePokemon(0);}
+        else if (fuecocoBattleBtn.isSelected()){myPlayer.setCurrentBattlePokemon(1);}
+        else if (pikachuBattleBtn.isSelected()){myPlayer.setCurrentBattlePokemon(2);}
+        else if (turtwigBattleBtn.isSelected()){myPlayer.setCurrentBattlePokemon(3);}
+        else {throw new IllegalArgumentException("Selection is not valid. Check your label names in"
+                + "chooseBattlePkmnScreen AND setUpBattlePkmnFromRadio()"
+                + "and make sure they match."
+        );}
     }
 
     public static void main(String[] args) throws IOException {
