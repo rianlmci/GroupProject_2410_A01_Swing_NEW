@@ -106,6 +106,9 @@ public class gameContainer {
     private JButton battlePlayersMove1Btn;
     private JButton battlePlayersMove2Btn;
     private JButton battlePlayersMove3Btn;
+    private JTextField nameCaughtPkmnTxt;
+    private JLabel addPkmnToPartyLabel;
+    private JButton addPkmnToPartyBtn;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
