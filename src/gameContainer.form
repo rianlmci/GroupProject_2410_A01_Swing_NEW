@@ -796,6 +796,51 @@
               <text value="Return To Origin"/>
             </properties>
           </component>
+          <grid id="2dcea" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="f0455" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <vspacer id="ac12a">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="890b1" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="47cc1" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="e1636" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="38375" binding="southScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -850,22 +895,46 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="22e5a" class="javax.swing.JLabel" binding="addToPartyLabel">
-            <constraints border-constraint="North"/>
-            <properties>
-              <text value="Hooray, you did it! What will you name this Pokemon?"/>
-            </properties>
-          </component>
-          <component id="790a5" class="javax.swing.JTextField" binding="nameCaughtPokemon">
-            <constraints border-constraint="South"/>
+          <grid id="4afa7" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
             <properties/>
-          </component>
-          <component id="f8647" class="javax.swing.JButton" binding="addPokemonToParty">
-            <constraints border-constraint="East"/>
-            <properties>
-              <text value="Continue"/>
-            </properties>
-          </component>
+            <border type="none"/>
+            <children>
+              <component id="9e001" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="29876" class="javax.swing.JTextField" binding="nameCaughtPkmnTxt">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="b172f" class="javax.swing.JLabel" binding="addPkmnToPartyLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Hooray, you did it! What will you name this Pokemon?"/>
+                </properties>
+              </component>
+              <component id="5e613" class="javax.swing.JButton" binding="addPkmnToPartyBtn">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Add Pokemon To Party"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="17969" binding="chooseBattlePkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -959,7 +1028,7 @@
                   <text value="Pikachu"/>
                 </properties>
               </component>
-              <component id="17f56" class="javax.swing.JRadioButton" binding="turtwigRadioButton" default-binding="true">
+              <component id="17f56" class="javax.swing.JRadioButton" binding="turtwigBattleBtn">
                 <constraints>
                   <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>

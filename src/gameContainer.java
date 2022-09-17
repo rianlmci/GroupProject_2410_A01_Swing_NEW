@@ -73,9 +73,6 @@ public class gameContainer {
     private JButton returnToOriginS;
     private JButton returnToOriginE;
     private JButton returnToOriginW;
-    private JLabel addToPartyLabel;
-    private JTextField nameCaughtPokemon;
-    private JButton addPokemonToParty;
     private JLabel caughtAll;
     private JLabel gameWon;
     private JRadioButton radioBattlePoke1;
@@ -85,12 +82,16 @@ public class gameContainer {
     private JLabel gameOverLabel;
     private JRadioButton fuecocoBattleBtn;
     private JRadioButton pikachuBattleBtn;
-    private JRadioButton turtwigRadioButton;
+    private JRadioButton turtwigBattleBtn;
     private JLabel battleFuecocoLabel;
     private JLabel battlePikachuLabel;
     private JLabel battleTurtwigLabel;
     private JLabel battlePokemonLabel;
     private JRadioButton froakieBattleBtn;
+    private JTextField nameCaughtPkmnTxt;
+    private JButton addPkmnToPartyBtn;
+    private JLabel addPkmnToPartyLabel;
+    private JLabel gameOverMessage;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -304,10 +305,17 @@ public class gameContainer {
             }
         });
         // Radio Buttons for Battle Pokemon
-        radioBattlePoke1.addActionListener(new ActionListener() {
+        turtwigBattleBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 battleFroakieLabel.setIcon(new ImageIcon("/images/Turtwig.png"));
+            }
+        });
+        addPkmnToPartyBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Pokemon pkmn = new Pokemon(nameCaughtPkmnTxt.getSelectedText());
+
             }
         });
     }
