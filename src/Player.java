@@ -21,10 +21,10 @@ public class Player {
         this.name= name;
         switch(chosenAppearance){
             case "masculine":
-                this.appearance = "/images/Masculine.png"; //TODO
+                this.appearance = "/images/Masculine.png";
                 break;
             case "feminine":
-                this.appearance = "/images/Feminine.png"; //TODO
+                this.appearance = "/images/Feminine.png";
                 break;
         }
         this.capturedPokemon[0] = starterPokemon;
@@ -40,7 +40,8 @@ public class Player {
         capturedPokemon[0] = chosenPokemon;
     }
 
-    /** Adds a pokemon to an open slot in the captured
+    /**
+     * Adds a pokemon to an open slot in the captured
      * pokemon array.
      * @author Rianna McIntyre
      * @param caughtMon the pokemon the player just caught

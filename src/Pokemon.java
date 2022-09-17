@@ -9,12 +9,35 @@ public class Pokemon {
    private String speciesName;
    private Type type;
    private Location location; //might be redundant?
-   private static String moves[][] = {
-           {"Fire Attack", "fire"},
-           {"Water Attack", "water"},
-           {"Grass Attack", "grass"},
-           {"Electric Attack", "electric"}
-   };
+   private String moves[][];
+
+   /*
+   * Each pokemon's moves and their types!
+   * (So I don't have to keep copy and pasting them into constructors.)
+   */
+   private String fuecocoMoves[][] = {
+           {"Ember", "fire"},
+           {"Scratch", "normal"},
+           {"Swift", "normal"},
+           {"Brick break", "fighting"}};
+
+   private String pikachuMoves[][] = {
+           {"Electro Ball", "electric"},
+           {"Quick Attack", "normal"},
+           {"Play Rough", "fairy"},
+           {"Mega Punch", "normal"}};
+
+   private String turtwigMoves[][] = {
+           {"Razor Leaf", "grass"},
+           {"Bite", "dark"},
+           {"Facade", "normal"},
+           {"Rock Smash", "fighting"}};
+
+   private String froakieMoves[][] = {
+           {"Bubble", "water"},
+           {"Pound", "normal"},
+           {"Lick", "ghost"},
+           {"Fling", "normal"}};
 
    /**
     * @author Rianna McIntyre
@@ -30,33 +53,32 @@ public class Pokemon {
             this.name = "Fuecoco";
             this.type = Type.FIRE;
             this.appearance = "/images/Fuecoco.png";
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.moves= fuecocoMoves;
             break;
          case "Pikachu":
             this.speciesName = "Pikachu";
             this.name = "Pikachu";
             this.type = Type.ELECTRIC;
             this.appearance = "/images/Pikachu.png";
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.moves= pikachuMoves;
             break;
          case "Turtwig":
             this.speciesName = "Turtwig";
             this.name = "Turtwig";
             this.type = Type.GRASS;
             this.appearance = "/images/Turtwig.png";
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.moves= turtwigMoves;
             break;
          case "Froakie":
             this.speciesName = "Froakie";
             this.type = Type.WATER;
             this.appearance = "/images/Froakie.png";
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.moves = froakieMoves;
             break;
       }
    }
 
    /**
-    * Overloaded
     * @author Rianna McIntyre
     * Overloaded pokemon constructor without a nickname.
     * @param speciesName name of the pokemon species we're creating. First letter has to be capitalized.
@@ -68,29 +90,29 @@ public class Pokemon {
             this.speciesName = "Fuecoco";
             this.name = "Fuecoco";
             this.type = Type.FIRE;
-            this.appearance = "/images/Fuecoco.png"; //TODO
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.appearance = "/images/Fuecoco.png";
+            this.moves= fuecocoMoves;
             break;
          case "Pikachu":
             this.speciesName = "Pikachu";
             this.name = "Pikachu";
             this.type = Type.ELECTRIC;
-            this.appearance = "/images/Pikachu.png"; //TODO
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.appearance = "/images/Pikachu.png";
+            this.moves= pikachuMoves;
             break;
          case "Turtwig":
             this.speciesName = "Turtwig";
             this.name = "Turtwig";
             this.type = Type.GRASS;
-            this.appearance = "/images/Turtwig.png"; //TODO
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.appearance = "/images/Turtwig.png";
+            this.moves= turtwigMoves;
             break;
          case "Froakie":
             this.speciesName = "Froakie";
             this.name = "Froakie";
             this.type = Type.WATER;
-            this.appearance = "/images/Froakie.png"; //TODO
-            //TODO SET MOVE SET TO 2D ARRAY
+            this.appearance = "/images/Froakie.png";
+            this.moves= froakieMoves;
             break;
       }
    }
@@ -109,7 +131,7 @@ public class Pokemon {
     */
    public void setName(String newName) {
       this.name = newName;
-   } //might not be needed due to constructor
+   }
 
    /**
     * @author Rianna McIntyre
@@ -176,7 +198,7 @@ public class Pokemon {
 
    /**
     * @author Rianna McIntyre
-    * @return name of this this species of pokemon.
+    * @return name of this species of pokemon.
     */
    public String getSpeciesName() {
       return speciesName;
@@ -259,23 +281,54 @@ public class Pokemon {
    //= = = TEST CLIENT = = =//
    public static void main(String[] args) {
       GameMaster myGameMaster = new GameMaster();
-      Pokemon myPokemon = new Pokemon("Fuecoco");
-      Pokemon enemyPokemon = new Pokemon("Turtwig");
-      int ourChosenRandomMove = myGameMaster.chooseWildAttack();
-      int enemyChosenRandomMove = myGameMaster.chooseWildAttack();
+      Player myPlayer= new Player("Ri","feminine", new Pokemon("Pikachu"));
+      myPlayer.setCurrentBattlePokemon(0);
+      myGameMaster.setCurrentEnemyPokemon(Location.EAST);
+      for (int i = 0; i < 4; i++) {
+         int ourChosenRandomMove = myGameMaster.chooseWildAttack();
+         int enemyChosenRandomMove = myGameMaster.chooseWildAttack();
+         System.out.println("= = = =  NEW TURN = = = =");
+         System.out.println("Our " + myPlayer.getCurrentBattlePokemon().getName() +"'s chosen attack was "
+                 + myPlayer.getCurrentBattlePokemon().getMoveName(ourChosenRandomMove)
+                 + " and it did "
+                 + myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
+                 myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourChosenRandomMove))
+                 + " damage to the wild " + myGameMaster.getCurrentEnemyPokemon().getTypeAsString()
+                 + " type " + myGameMaster.getCurrentEnemyPokemon().getName() + "!"
+         );
 
-      System.out.println(myPokemon.speciesName +"'s chosen attack was " + myPokemon.getMoveName(ourChosenRandomMove)
-              + " and it did "
-              + myGameMaster.calculateDamage(enemyPokemon.getType(), myPokemon.getMoveTypeAsType(ourChosenRandomMove))
-              + " damage to the " + enemyPokemon.getTypeAsString() + " type " + enemyPokemon.getName() + "!"
-      );
-
-      System.out.println(enemyPokemon.speciesName +"'s chosen attack was " + enemyPokemon.getMoveName(enemyChosenRandomMove)
-              + " and it did "
-              + myGameMaster.calculateDamage(myPokemon.getType(), enemyPokemon.getMoveTypeAsType(enemyChosenRandomMove))
-              + " damage to the " + myPokemon.getTypeAsString() + " type " + myPokemon.getName() + "!"
-      );
+         System.out.println("Enemy " + myGameMaster.getCurrentEnemyPokemon().speciesName +"'s chosen attack was "
+                 + myGameMaster.getCurrentEnemyPokemon().getMoveName(enemyChosenRandomMove)
+                 + " and it did "
+                 + myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
+                 myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove))
+                 + " damage to our " + myPlayer.getCurrentBattlePokemon().getTypeAsString()
+                 + " type " +  myPlayer.getCurrentBattlePokemon().getName() + "!"
+         );
+         //Updates our pokemon's health
+         myPlayer.getCurrentBattlePokemon().setHealth(
+                 (myPlayer.getCurrentBattlePokemon().getHealth())
+                 -
+                 (myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
+                 myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)))
+         );
+         System.out.println("Our " + myPlayer.getCurrentBattlePokemon().getName() + "'s current health is "
+                 + myPlayer.getCurrentBattlePokemon().getHealth());
+         //Updates the enemy pokemon's health
+         myGameMaster.getCurrentEnemyPokemon().setHealth(
+                 (myGameMaster.getCurrentEnemyPokemon().getHealth())
+                 -
+                 (myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
+                 myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourChosenRandomMove)))
+         );
+         System.out.println("Enemy " + myGameMaster.getCurrentEnemyPokemon().getName() + "'s current health is "
+                 + myGameMaster.getCurrentEnemyPokemon().getHealth());
+         System.out.println("The game's lose condition is " + myGameMaster.isGameLost(myPlayer) + ".");
+         System.out.println();
+      }
+      System.out.println("Added two of the pokemon at the current location");
+      myPlayer.addPkmntoPrty(new Pokemon(myGameMaster.getCurrentEnemyPokemon().getSpeciesName()));
+      myPlayer.addPkmntoPrty(new Pokemon(myGameMaster.getCurrentEnemyPokemon().getSpeciesName()));
+      System.out.println("The game's win condition is " + myGameMaster.isGameWon(myPlayer));
    }
 }
-
-
