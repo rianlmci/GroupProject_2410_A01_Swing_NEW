@@ -386,6 +386,7 @@ public class gameContainer {
 
         //If enemy pokemon's health reaches less than or equal to zero by this point, move to catching screen.
         else if(myGameMaster.getCurrentEnemyPokemon().getHealth() <= 0){
+            setUpCaughtPokemonScreen();
             pkmnGameContainerDeck.show(pokemonGameContainerPane, "addPokemon");
         }
 
@@ -473,6 +474,30 @@ public class gameContainer {
                 + "chooseBattlePkmnScreen AND setUpBattlePkmnFromRadio()"
                 + "and make sure they match."
         );}
+    }
+    /**
+     * @author Rianna McIntyre
+     * Sets up add caught pokemon screen labels appropriately based on what the player fought.
+     */
+    public void setUpCaughtPokemonScreen(){
+        //TODO replace with actual image label name that Jasmine chooses, remove declared version in this method.
+        JLabel addPkmnToPartyImageLabel = new JLabel();
+        addPkmnToPartyImageLabel.setIcon(new ImageIcon(gameContainer.class.getResource(
+                myGameMaster.getCurrentEnemyPokemon().getAppearance())));
+        switch (myPlayer.getPlayerLocation()){
+            case NORTH:
+                myGameMaster.north.setWildPkmnPresent(false);
+                break;
+            case SOUTH:
+                myGameMaster.south.setWildPkmnPresent(false);
+                break;
+            case EAST:
+                myGameMaster.east.setWildPkmnPresent(false);
+                break;
+            case WEST:
+                myGameMaster.west.setWildPkmnPresent(false);
+                break;
+        }
     }
 
     public static void main(String[] args) throws IOException {

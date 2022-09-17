@@ -40,7 +40,8 @@ public class Player {
         capturedPokemon[0] = chosenPokemon;
     }
 
-    /** Adds a pokemon to an open slot in the captured
+    /**
+     * Adds a pokemon to an open slot in the captured
      * pokemon array.
      * @author Rianna McIntyre
      * @param caughtMon the pokemon the player just caught
