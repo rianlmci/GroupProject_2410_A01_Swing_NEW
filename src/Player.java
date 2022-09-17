@@ -21,10 +21,10 @@ public class Player {
         this.name= name;
         switch(chosenAppearance){
             case "masculine":
-                this.appearance = "/images/Masculine.png"; //TODO
+                this.appearance = "/images/Masculine.png";
                 break;
             case "feminine":
-                this.appearance = "/images/Feminine.png"; //TODO
+                this.appearance = "/images/Feminine.png";
                 break;
         }
         this.capturedPokemon[0] = starterPokemon;

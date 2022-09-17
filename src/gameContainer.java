@@ -73,6 +73,9 @@ public class gameContainer {
     private JButton returnToOriginS;
     private JButton returnToOriginE;
     private JButton returnToOriginW;
+    private JLabel addToPartyLabel;
+    private JTextField nameCaughtPokemon;
+    private JButton addPokemonToParty;
     private JLabel caughtAll;
     private JLabel gameWon;
     private JRadioButton radioBattlePoke1;
@@ -88,10 +91,21 @@ public class gameContainer {
     private JLabel battleTurtwigLabel;
     private JLabel battlePokemonLabel;
     private JRadioButton froakieBattleBtn;
-    private JTextField nameCaughtPkmnTxt;
-    private JButton addPkmnToPartyBtn;
-    private JLabel addPkmnToPartyLabel;
     private JLabel gameOverMessage;
+    private JLabel battleScreenPaddingTop;
+    private JLabel battleScreenPaddingBottom;
+    private JLabel battleScreenPaddingLeft;
+    private JLabel battleScreenPaddingRight;
+    private JPanel battleScreenCenter;
+    private JLabel battlePlayersStatsLabel;
+    private JLabel battleEnemiesStatsLabel;
+    private JLabel battleUpdateLabel;
+    private JLabel battlePlayersPokemonLabel;
+    private JLabel battleEnemiesPokemonLabel;
+    private JButton battlePlayersMove0Btn;
+    private JButton battlePlayersMove1Btn;
+    private JButton battlePlayersMove2Btn;
+    private JButton battlePlayersMove3Btn;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -154,7 +168,6 @@ public class gameContainer {
         pokemonSelectToOriginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 if(selectStarterFuecocoBtn.isSelected()){
                     myPlayer.chooseStarterPokemon(new Pokemon("Fuecoco"));
                 }
@@ -177,7 +190,7 @@ public class gameContainer {
                 else{
                     myPlayer.capturedPokemon[0].setName(myPlayer.capturedPokemon[0].getSpeciesName());
                 }
-                //saveGame(); //TODO
+
                 originScreenTitleLabel.setText("<html><u><b>" + myPlayer.getName() + "'s Progress So Far...</b></u></html>");
                 originScreenTrainerAppearanceLabel.setIcon(new ImageIcon(gameContainer.class.getResource(myPlayer.getAppearance())));
                 originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
@@ -186,7 +199,7 @@ public class gameContainer {
                 originToEastBtn.setText(myGameMaster.east.getParkLocName());
                 originToWestBtn.setText(myGameMaster.west.getParkLocName());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
-            
+
              /** @author Jasmine
                 * Write player name to file
                 *
@@ -311,11 +324,28 @@ public class gameContainer {
                 battleFroakieLabel.setIcon(new ImageIcon("/images/Turtwig.png"));
             }
         });
-        addPkmnToPartyBtn.addActionListener(new ActionListener() {
+        battlePlayersMove0Btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Pokemon pkmn = new Pokemon(nameCaughtPkmnTxt.getSelectedText());
-
+                updateBattleStatsAndLabels(0);
+            }
+        });
+        battlePlayersMove1Btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateBattleStatsAndLabels(1);
+            }
+        });
+        battlePlayersMove2Btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateBattleStatsAndLabels(2);
+            }
+        });
+        battlePlayersMove3Btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateBattleStatsAndLabels(3);
             }
         });
     }
@@ -332,14 +362,18 @@ public class gameContainer {
 
         //Updates our pokemon's health.
         myPlayer.getCurrentBattlePokemon().setHealth(
-                myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
-                myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove))
+                (myPlayer.getCurrentBattlePokemon().getHealth())
+                -
+                (myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
+                myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)))
         );
 
         //Updates enemy pokemon's health.
         myGameMaster.getCurrentEnemyPokemon().setHealth(
-                myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
-                myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourMoveChoice))
+                (myGameMaster.getCurrentEnemyPokemon().getHealth())
+                 -
+                 (myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
+                  myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourMoveChoice)))
         );
 
         //If player pokemon's health reaches less than or equal to zero by the point, they lose.
@@ -354,10 +388,6 @@ public class gameContainer {
 
         //Else, we update all the labels.
         else {
-            //TODO remove these test variables when the battle screen is implemented.
-            JLabel battleUpdateLabel = new JLabel();
-            JLabel playersStatsLabel = new JLabel();
-            JLabel enemiesStatsLabel = new JLabel();
             String battleText = new String("<html><center><p>"
                     + myPlayer.getCurrentBattlePokemon().getSpeciesName() + "'s chosen attack was "
                     + myPlayer.getCurrentBattlePokemon().getMoveName(ourMoveChoice)
@@ -380,20 +410,49 @@ public class gameContainer {
             );
 
             String playerStatsText = new String(
-                    "<html><b><u>" + myPlayer.getCurrentBattlePokemon().getName()  + "</b></u>"
+                    "<html><center><b><u>" + myPlayer.getCurrentBattlePokemon().getName()  + "</b></u>"
                     + "<p><b>Health: </b>" + myPlayer.getCurrentBattlePokemon().getHealth() + "</p>"
-                    + "</html>"
+                    + "</center></html>"
             );
             String enemyStatsText= new String(
-                    "<html><b><u>" + myGameMaster.getCurrentEnemyPokemon().getName()  + "</b></u>"
+                    "<html><center><b><u>" + myGameMaster.getCurrentEnemyPokemon().getName()  + "</b></u>"
                     + "<p><b>Health: </b>" + myGameMaster.getCurrentEnemyPokemon().getHealth() + "</p>"
-                    + "</html>"
+                    + "</center></html>"
             );
 
             battleUpdateLabel.setText(battleText);
-            playersStatsLabel.setText(playerStatsText);
-            enemiesStatsLabel.setText(enemyStatsText);
+            battlePlayersStatsLabel.setText(playerStatsText);
+            battleEnemiesStatsLabel.setText(enemyStatsText);
         }
+    }
+
+    /**
+     * @author Rianna McIntyre
+     * Sets up battle screen labels for the start of the battle.
+     */
+    public void setUpBattleScreenLabels(){
+        myGameMaster.setCurrentEnemyPokemon(myPlayer.getPlayerLocation());
+        battleUpdateLabel.setText("The battle begins!");
+        String playerStatsText = new String(
+                "<html><center><b><u>" + myPlayer.getCurrentBattlePokemon().getName()  + "</b></u>"
+                        + "<p><b>Health: </b>" + myPlayer.getCurrentBattlePokemon().getHealth() + "</p>"
+                        + "</center></html>"
+        );
+        String enemyStatsText= new String(
+                "<html><center><b><u>" + myGameMaster.getCurrentEnemyPokemon().getName()  + "</b></u>"
+                        + "<p><b>Health: </b>" + myGameMaster.getCurrentEnemyPokemon().getHealth() + "</p>"
+                        + "</center></html>"
+        );
+        battlePlayersPokemonLabel.setIcon(new ImageIcon(gameContainer.class.getResource(
+                myPlayer.getCurrentBattlePokemon().getAppearance())));
+        battlePlayersStatsLabel.setText(playerStatsText);
+        battleEnemiesPokemonLabel.setIcon(new ImageIcon(gameContainer.class.getResource(
+                myGameMaster.getCurrentEnemyPokemon().getAppearance())));
+        battleEnemiesStatsLabel.setText(enemyStatsText);
+        battlePlayersMove0Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(0));
+        battlePlayersMove1Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(1));
+        battlePlayersMove2Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(2));
+        battlePlayersMove3Btn.setText(myPlayer.getCurrentBattlePokemon().getMoveName(3));
     }
 
     public static void main(String[] args) throws IOException {

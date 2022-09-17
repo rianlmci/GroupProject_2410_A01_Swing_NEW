@@ -11,13 +11,11 @@ public class GameMaster {
     private boolean gameLost = false;
     //private int battleTurn = 1; redundant
     private Pokemon currentEnemyPokemon = new Pokemon("Fuecoco");
-    public static ParkLocation north = new ParkLocation(Location.NORTH);
-    public static ParkLocation south = new ParkLocation(Location.SOUTH);
-    public static ParkLocation east = new ParkLocation(Location.EAST);
-    public static ParkLocation west = new ParkLocation(Location.WEST);
-    public static ParkLocation origin = new ParkLocation(Location.ORIGIN);
-
-
+    public ParkLocation north = new ParkLocation(Location.NORTH);
+    public ParkLocation south = new ParkLocation(Location.SOUTH);
+    public ParkLocation east = new ParkLocation(Location.EAST);
+    public ParkLocation west = new ParkLocation(Location.WEST);
+    public ParkLocation origin = new ParkLocation(Location.ORIGIN);
 
     /**
      * @author Rianna McIntyre
@@ -39,12 +37,16 @@ public class GameMaster {
         switch(playerLocation) {
             case NORTH:
                 this.currentEnemyPokemon = north.getWildPokemon();
+                break;
             case SOUTH:
                 this.currentEnemyPokemon = south.getWildPokemon();
+                break;
             case EAST:
                 this.currentEnemyPokemon = east.getWildPokemon();
+                break;
             case WEST:
                 this.currentEnemyPokemon = west.getWildPokemon();
+                break;
         }
     }
 
@@ -95,7 +97,6 @@ public class GameMaster {
                    moveType == Type.WATER ||
                    moveType == Type.ROCK)
                 {damage = 40;}
-
                 else if(moveType == Type.BUG ||
                     moveType == Type.FAIRY ||
                     moveType == Type.FIRE ||

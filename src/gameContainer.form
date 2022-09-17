@@ -796,51 +796,6 @@
               <text value="Return To Origin"/>
             </properties>
           </component>
-          <grid id="2dcea" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints border-constraint="Center"/>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="f0455" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
-              <vspacer id="ac12a">
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
-              <component id="890b1" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
-              <component id="47cc1" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
-              <component id="e1636" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
         </children>
       </grid>
       <grid id="38375" binding="southScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -1028,7 +983,7 @@
                   <text value="Pikachu"/>
                 </properties>
               </component>
-              <component id="17f56" class="javax.swing.JRadioButton" binding="turtwigBattleBtn">
+              <component id="17f56" class="javax.swing.JRadioButton" binding="turtwigRadioButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -1044,9 +999,212 @@
         <constraints>
           <card name="battle"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-12828863"/>
+        </properties>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="7f699" class="javax.swing.JLabel" binding="battleScreenPaddingTop">
+            <constraints border-constraint="North"/>
+            <properties>
+              <preferredSize width="16" height="50"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="868b8" class="javax.swing.JLabel" binding="battleScreenPaddingBottom">
+            <constraints border-constraint="South"/>
+            <properties>
+              <preferredSize width="16" height="50"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="8acb2" class="javax.swing.JLabel" binding="battleScreenPaddingLeft">
+            <constraints border-constraint="West"/>
+            <properties>
+              <preferredSize width="50" height="16"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="d952e" class="javax.swing.JLabel" binding="battleScreenPaddingRight">
+            <constraints border-constraint="East"/>
+            <properties>
+              <preferredSize width="50" height="16"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <grid id="1cc80" binding="battleScreenCenter" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="8363f" class="javax.swing.JLabel" binding="battleUpdateLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-12828863"/>
+                  <font size="11" style="0"/>
+                  <foreground color="-4473925"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <text value="The battle begins!"/>
+                  <verticalAlignment value="1"/>
+                </properties>
+              </component>
+              <component id="c0098" class="javax.swing.JButton" binding="battlePlayersMove0Btn">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="120" height="50"/>
+                    <preferred-size width="120" height="50"/>
+                    <maximum-size width="120" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-10525081"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <focusPainted value="false"/>
+                  <focusTraversalPolicyProvider value="false"/>
+                  <focusable value="false"/>
+                  <font size="9"/>
+                  <foreground color="-4473925"/>
+                  <horizontalTextPosition value="0"/>
+                  <minimumSize width="300" height="30"/>
+                  <opaque value="true"/>
+                  <preferredSize width="200" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="Move 0"/>
+                </properties>
+              </component>
+              <component id="a3a29" class="javax.swing.JButton" binding="battlePlayersMove1Btn">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="120" height="50"/>
+                    <preferred-size width="120" height="50"/>
+                    <maximum-size width="120" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-10525081"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <focusPainted value="false"/>
+                  <focusTraversalPolicyProvider value="false"/>
+                  <focusable value="false"/>
+                  <font size="9"/>
+                  <foreground color="-4473925"/>
+                  <horizontalTextPosition value="0"/>
+                  <minimumSize width="300" height="30"/>
+                  <opaque value="true"/>
+                  <preferredSize width="200" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="Move 1"/>
+                </properties>
+              </component>
+              <component id="7367c" class="javax.swing.JButton" binding="battlePlayersMove2Btn">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="120" height="50"/>
+                    <preferred-size width="120" height="50"/>
+                    <maximum-size width="120" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-10525081"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <focusPainted value="false"/>
+                  <focusTraversalPolicyProvider value="false"/>
+                  <focusable value="false"/>
+                  <font size="9"/>
+                  <foreground color="-4473925"/>
+                  <horizontalTextPosition value="0"/>
+                  <minimumSize width="300" height="30"/>
+                  <opaque value="true"/>
+                  <preferredSize width="200" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="Move 2"/>
+                </properties>
+              </component>
+              <component id="22c58" class="javax.swing.JButton" binding="battlePlayersMove3Btn">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="120" height="50"/>
+                    <preferred-size width="120" height="50"/>
+                    <maximum-size width="120" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-10525081"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <focusPainted value="false"/>
+                  <focusTraversalPolicyProvider value="false"/>
+                  <focusable value="false"/>
+                  <font size="9"/>
+                  <foreground color="-4473925"/>
+                  <horizontalTextPosition value="0"/>
+                  <minimumSize width="300" height="30"/>
+                  <opaque value="true"/>
+                  <preferredSize width="200" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="Move 3"/>
+                </properties>
+              </component>
+              <component id="ee043" class="javax.swing.JLabel" binding="battlePlayersPokemonLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <icon value="images/Fuecoco.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="b47" class="javax.swing.JLabel" binding="battleEnemiesPokemonLabel">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <icon value="images/Fuecoco.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="67636" class="javax.swing.JLabel" binding="battlePlayersStatsLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-4473925"/>
+                  <text value="&lt;html&gt;&lt;center&gt;&lt;b&gt;&lt;u&gt;Fuecoco&lt;/b&gt;&lt;/u&gt;&lt;p&gt;&lt;b&gt;Health: &lt;/b&gt;80&lt;/p&gt;&lt;/center&gt;&lt;/html&gt;"/>
+                </properties>
+              </component>
+              <component id="39957" class="javax.swing.JLabel" binding="battleEnemiesStatsLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-4473925"/>
+                  <text value="&lt;html&gt;&lt;center&gt;&lt;b&gt;&lt;u&gt;Fuecoco&lt;/b&gt;&lt;/u&gt;&lt;p&gt;&lt;b&gt;Health: &lt;/b&gt;80&lt;/p&gt;&lt;/center&gt;&lt;/html&gt;"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
       </grid>
       <grid id="88380" binding="gameOverScreen" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
@@ -1102,7 +1260,7 @@
       <grid id="5b0d5" binding="gameWonScreen" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <card name="Card1"/>
+          <card name="gameWon"/>
         </constraints>
         <properties/>
         <border type="none"/>
