@@ -74,7 +74,7 @@ public class ReadWriteFile {
         BufferedReader br = new BufferedReader(new FileReader(filename));
         try {
             String line = br.readLine();
-            System.out.print("TESTING 123 " + line);
+            System.out.print(line);
             br.close();
             return line;
         } catch (FileNotFoundException e) {
@@ -106,7 +106,9 @@ public class ReadWriteFile {
                             location.setWildPkmnPresent(false);
                         }
                         else {location.setWildPkmnPresent(true);}
+
                     }
+
             }
             br.close();
         } catch (IOException e) {

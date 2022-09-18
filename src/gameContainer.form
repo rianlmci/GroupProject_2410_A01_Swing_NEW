@@ -775,9 +775,11 @@
                   </component>
                 </children>
               </grid>
-              <component id="fae92" class="javax.swing.JTextField" binding="playerData">
+              <component id="54b33" class="javax.swing.JLabel" binding="playerData">
                 <constraints border-constraint="Center"/>
-                <properties/>
+                <properties>
+                  <text value="PlayerData"/>
+                </properties>
               </component>
             </children>
           </grid>
@@ -790,12 +792,63 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="47a73" class="javax.swing.JButton" binding="returnToOriginN">
-            <constraints border-constraint="South"/>
-            <properties>
-              <text value="Return To Origin"/>
-            </properties>
-          </component>
+          <grid id="52ca2" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d133" class="javax.swing.JLabel" binding="grandCanyonImage">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/north/grandCanyon-brightAngel_RESIZED_600.jpeg"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <vspacer id="47679">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="d2fd6" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/Fuecoco.png"/>
+                  <text value="You Found Wild Fuecoco!"/>
+                </properties>
+              </component>
+              <component id="4c50" class="javax.swing.JLabel" binding="grandCanyonLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Grand Canyon"/>
+                </properties>
+              </component>
+              <component id="26ea6" class="javax.swing.JButton" binding="catchNorthPokemonBtn">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Catch it!"/>
+                </properties>
+              </component>
+              <component id="47a73" class="javax.swing.JButton" binding="returnToOriginN">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="563" height="30"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value="Return To Origin"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="38375" binding="southScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -805,12 +858,66 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="5ae49" class="javax.swing.JButton" binding="returnToOriginS">
-            <constraints border-constraint="South"/>
-            <properties>
-              <text value="Return To Origin"/>
-            </properties>
-          </component>
+          <grid id="9a5f3" layout-manager="GridLayoutManager" row-count="4" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="29310" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/south/yosemite-elCap_RESIZED_600.jpeg"/>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <vspacer id="8e267">
+                <constraints>
+                  <grid row="2" column="4" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <vspacer id="58ee7">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="5ae49" class="javax.swing.JButton" binding="returnToOriginS">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Return To Origin"/>
+                </properties>
+              </component>
+              <component id="4d013" class="javax.swing.JButton" binding="catchItButton" default-binding="true">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Catch It!"/>
+                </properties>
+              </component>
+              <component id="cb89c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/Turtwig.png"/>
+                  <text value="Wild Turtwig Found!"/>
+                </properties>
+              </component>
+              <component id="a55b6" class="javax.swing.JLabel" binding="yosemiteLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Yosemite"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="55ba7" binding="eastScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -820,12 +927,61 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="b7ce9" class="javax.swing.JButton" binding="returnToOriginE">
-            <constraints border-constraint="South"/>
-            <properties>
-              <text value="Return To Origin"/>
-            </properties>
-          </component>
+          <grid id="f8e81" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="86380" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/east/denali-donSheldonAmp.jpeg"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="79eb9" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/Froakie.png"/>
+                  <text value="Wild Froakie Found!"/>
+                </properties>
+              </component>
+              <component id="c5942" class="javax.swing.JLabel" binding="denaliLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Denali"/>
+                </properties>
+              </component>
+              <hspacer id="43903">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="b7ce9" class="javax.swing.JButton" binding="returnToOriginE">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Return To Origin"/>
+                </properties>
+              </component>
+              <component id="82398" class="javax.swing.JButton" binding="catchItButton1" default-binding="true">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Catch It!"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="cb5ee" binding="westScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -835,12 +991,61 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8e8a0" class="javax.swing.JButton" binding="returnToOriginW">
-            <constraints border-constraint="South"/>
-            <properties>
-              <text value="Return To Origin"/>
-            </properties>
-          </component>
+          <grid id="1c408" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <vspacer id="d365d">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="78ace" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/west/yellowstone-oldFaithful.jpeg"/>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="6d6af" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Yellowstone"/>
+                </properties>
+              </component>
+              <component id="deb7d" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/Pikachu.png"/>
+                  <text value="Wild Pikachu Found!"/>
+                </properties>
+              </component>
+              <component id="c543f" class="javax.swing.JButton" binding="catchItButton2" default-binding="true">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Catch It!"/>
+                </properties>
+              </component>
+              <component id="8e8a0" class="javax.swing.JButton" binding="returnToOriginW">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Return To Origin"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="85054" binding="addCaughtPkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -1223,7 +1428,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="57347" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="57347" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -1231,9 +1436,18 @@
             <properties/>
             <border type="none"/>
             <children>
+              <component id="a06d1" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <icon value="images/fainted.jpeg"/>
+                  <text value=""/>
+                </properties>
+              </component>
               <component id="77cd5" class="javax.swing.JLabel" binding="gameOverLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="GAME OVER"/>
@@ -1251,7 +1465,7 @@
             <children>
               <component id="f71da" class="javax.swing.JLabel" binding="gameOverMessage">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="That last attack made your pokemon faint. Seeing their exhausted face, you decide not to continue on your journey"/>
@@ -1266,7 +1480,7 @@
           </grid>
         </children>
       </grid>
-      <grid id="5b0d5" binding="gameWonScreen" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="5b0d5" binding="gameWonScreen" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <card name="gameWon"/>
@@ -1274,20 +1488,29 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8d2a9" class="javax.swing.JLabel" binding="caughtAll">
-            <constraints>
-              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="After winning that last battle, you’ve finally caught them all!"/>
-            </properties>
-          </component>
           <component id="c6e02" class="javax.swing.JLabel" binding="gameWon">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="YOU WIN!"/>
+            </properties>
+          </component>
+          <component id="dd322" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="images/win.jpg"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="8d2a9" class="javax.swing.JLabel" binding="caughtAll">
+            <constraints>
+              <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="After winning that last battle, you’ve finally caught them all!"/>
             </properties>
           </component>
         </children>

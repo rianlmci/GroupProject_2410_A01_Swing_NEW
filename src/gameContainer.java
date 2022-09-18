@@ -42,7 +42,7 @@ public class gameContainer {
     private JPanel addCaughtPkmnScreen;
     private JPanel chooseBattlePkmnScreen;
     private JPanel battleScreen;
-    private JButton choosePkmnBattleBtn;
+    private JButton catchNorthPokemonBtn;
     private JPanel gameOverScreen;
     private JPanel gameWonScreen;
     private JRadioButton selectStarterFuecocoBtn;
@@ -81,7 +81,7 @@ public class gameContainer {
     private JLabel gameWon;
     private JRadioButton radioBattlePoke1;
     private JLabel battleFroakieLabel;
-    private JTextField playerData;
+    private JLabel playerData;
     private JLabel gameOver;
     private JLabel gameOverLabel;
     private JRadioButton fuecocoBattleBtn;
@@ -111,6 +111,13 @@ public class gameContainer {
     private JLabel addPkmnToPartyLabel;
     private JButton addPkmnToPartyBtn;
     private JButton goToBattle;
+    private JLabel grandCanyonImage;
+    private JButton catchItButton;
+    private JLabel yosemiteLabel;
+    private JButton catchItButton1;
+    private JLabel denaliLabel;
+    private JButton catchItButton2;
+    private JLabel grandCanyonLabel;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -120,27 +127,13 @@ public class gameContainer {
 
     public gameContainer() {
 
-        addPkmnToPartyBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ParkLocation loc = new ParkLocation(myPlayer.getPlayerLocation());
-                if(nicknameField.getText() != null){
-                    myPlayer.addPkmntoPrty(loc.getWildPokemon());
-
-                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "originScreen");
-                }
-                if((myGameMaster.isGameWon(myPlayer)) == true){
-                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "gameWonScreen");
-                }
-            }
-        });
-
         /**
          * @author Rianna McIntyre
          */
         startGameBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                playerData.setVisible(false);
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "playerSelect");
             }
         });
@@ -155,12 +148,13 @@ public class gameContainer {
                 ReadWriteFile test = new ReadWriteFile();
                 try {
                     test.loadPlayerData();
+                    test.loadGameMasterData();
+                    // playerdata loadGame label. Read from file
+                    playerData.setText(test.loadPlayerData());
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                //  test.loadGameMasterData();
-                // Test label
-                playerData.setText(test.loadGameMasterData());
+
                 pkmnGameContainerDeck.show(pokemonGameContainerPane,"origin");
             }
 
@@ -371,9 +365,28 @@ public class gameContainer {
             }
         });
 
-        choosePkmnBattleBtn.addActionListener(new ActionListener() {
+        /**
+         * @author Jasmine ******************************
+         */
+        addPkmnToPartyBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                ParkLocation loc = new ParkLocation(myPlayer.getPlayerLocation());
+                if(nicknameField.getText() != null){
+                    myPlayer.addPkmntoPrty(loc.getWildPokemon());
+
+                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "originScreen");
+                }
+                if((myGameMaster.isGameWon(myPlayer)) == true){
+                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "gameWonScreen");
+                }
+            }
+        });
+        // Catch Pokemon on Current Screen
+        catchNorthPokemonBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setUpCaughtPokemonScreen();
                 pikachuBattleBtn.setEnabled(false);
                 froakieBattleBtn.setEnabled(false);
                 fuecocoBattleBtn.setEnabled(false);
