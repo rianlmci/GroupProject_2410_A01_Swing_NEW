@@ -42,6 +42,7 @@ public class gameContainer {
     private JPanel addCaughtPkmnScreen;
     private JPanel chooseBattlePkmnScreen;
     private JPanel battleScreen;
+    private JButton choosePkmnBattleBtn;
     private JPanel gameOverScreen;
     private JPanel gameWonScreen;
     private JRadioButton selectStarterFuecocoBtn;
@@ -106,9 +107,10 @@ public class gameContainer {
     private JButton battlePlayersMove1Btn;
     private JButton battlePlayersMove2Btn;
     private JButton battlePlayersMove3Btn;
-    private JTextField nameCaughtPkmnTxt;
+    private JTextField nicknameField;
     private JLabel addPkmnToPartyLabel;
     private JButton addPkmnToPartyBtn;
+    private JButton goToBattle;
     private CardLayout pkmnGameContainerDeck = (CardLayout)pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
@@ -117,6 +119,22 @@ public class gameContainer {
 
 
     public gameContainer() {
+
+        addPkmnToPartyBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ParkLocation loc = new ParkLocation(myPlayer.getPlayerLocation());
+                if(nicknameField.getText() != null){
+                    myPlayer.addPkmntoPrty(loc.getWildPokemon());
+
+                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "originScreen");
+                }
+                if((myGameMaster.isGameWon(myPlayer)) == true){
+                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "gameWonScreen");
+                }
+            }
+        });
+
         /**
          * @author Rianna McIntyre
          */
@@ -203,13 +221,13 @@ public class gameContainer {
                 originToWestBtn.setText(myGameMaster.west.getParkLocName());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
 
-             /**
-              * @author Jasmine
-              * Write player name to file
-              */
+                /**
+                 * @author Jasmine
+                 * Write player name to file
+                 */
                 ReadWriteFile gameFile = new ReadWriteFile();
                 gameFile.risWrite(myPlayer);
-           }
+            }
         });
         /**
          * @author Rianna McIntyre
@@ -223,7 +241,7 @@ public class gameContainer {
                 myGameMaster.setCurrentEnemyPokemon(Location.NORTH);
                 if(!myGameMaster.north.isWildPkmnPresent()){
                     northScreen.setVisible(false);
-              }
+                }
                 JLabel grandCanyonLabel = new JLabel();
                 grandCanyonLabel.setText(myGameMaster.north.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
@@ -327,6 +345,7 @@ public class gameContainer {
                 battleFroakieLabel.setIcon(new ImageIcon("/images/Turtwig.png"));
             }
         });
+
         battlePlayersMove0Btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -351,6 +370,46 @@ public class gameContainer {
                 updateBattleStatsAndLabels(3);
             }
         });
+
+        choosePkmnBattleBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pikachuBattleBtn.setEnabled(false);
+                froakieBattleBtn.setEnabled(false);
+                fuecocoBattleBtn.setEnabled(false);
+                turtwigBattleBtn.setEnabled(false);
+                if(checkCaughtPokemon("Pikachu")){
+                    pikachuBattleBtn.setEnabled(true);
+                }
+                if(checkCaughtPokemon("Froakie")){
+                    froakieBattleBtn.setEnabled(true);
+                }
+                if(checkCaughtPokemon("Fuecoco")){
+                    fuecocoBattleBtn.setEnabled(true);
+                }
+                if(checkCaughtPokemon("Turtwig")){
+                    turtwigBattleBtn.setEnabled(true);
+                }
+
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "chooseBattlePkmnScreen");
+            }
+        });
+        goToBattle.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setUpBattleScreenLabels();
+                setUpBattlePkmnFromRadio();
+                pkmnGameContainerDeck.show(pokemonGameContainerPane, "battle");
+            }
+        });
+    }
+    public boolean checkCaughtPokemon(String pkmnToCheck){
+        for(int i = 0; i < myPlayer.capturedPokemon.length; i++){
+            if(myPlayer.capturedPokemon[i].getSpeciesName().equals(pkmnToCheck)){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -366,17 +425,17 @@ public class gameContainer {
         //Updates our pokemon's health.
         myPlayer.getCurrentBattlePokemon().setHealth(
                 (myPlayer.getCurrentBattlePokemon().getHealth())
-                -
-                (myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
-                myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)))
+                        -
+                        (myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
+                                myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)))
         );
 
         //Updates enemy pokemon's health.
         myGameMaster.getCurrentEnemyPokemon().setHealth(
                 (myGameMaster.getCurrentEnemyPokemon().getHealth())
-                 -
-                 (myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
-                  myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourMoveChoice)))
+                        -
+                        (myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
+                                myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourMoveChoice)))
         );
 
         //If player pokemon's health reaches less than or equal to zero by the point, they lose.
@@ -415,13 +474,13 @@ public class gameContainer {
 
             String playerStatsText = new String(
                     "<html><center><b><u>" + myPlayer.getCurrentBattlePokemon().getName()  + "</b></u>"
-                    + "<p><b>Health: </b>" + myPlayer.getCurrentBattlePokemon().getHealth() + "</p>"
-                    + "</center></html>"
+                            + "<p><b>Health: </b>" + myPlayer.getCurrentBattlePokemon().getHealth() + "</p>"
+                            + "</center></html>"
             );
             String enemyStatsText= new String(
                     "<html><center><b><u>" + myGameMaster.getCurrentEnemyPokemon().getName()  + "</b></u>"
-                    + "<p><b>Health: </b>" + myGameMaster.getCurrentEnemyPokemon().getHealth() + "</p>"
-                    + "</center></html>"
+                            + "<p><b>Health: </b>" + myGameMaster.getCurrentEnemyPokemon().getHealth() + "</p>"
+                            + "</center></html>"
             );
 
             battleUpdateLabel.setText(battleText);
