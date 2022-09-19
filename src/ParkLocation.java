@@ -65,7 +65,7 @@ public class ParkLocation {
                 case WEST:
                     externalLocationName = "Yellowstone";
                     internalLocation = Location.WEST;
-                    description = "<html><p><h3>Zion:</h3></p>" +
+                    description = "<html><p><h3>Yellostone:</h3></p>" +
                             "<p>Yellowstone National Park sits on top of a dormant volcano and is home to more" +
                             " geysers and hot springs than any other place on earth.</p></html>";
                     this.appearance = "/images/west/yellowstone-map.jpeg";

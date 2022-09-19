@@ -62,11 +62,15 @@ public class Player {
     public void startBattle(){/*TODO*/} //might need to go in GameMaster
 
     /**
-     * @author Rianna McIntyre
+     * @author Jasmine
      * @param bPkmn index location of the chosen battle pokemon in the players party
      */
-    public void setCurrentBattlePokemon(int bPkmn){
-        this.currentBattlePokemon = capturedPokemon[bPkmn];
+    public void setCurrentBattlePokemon(String bPkmn){
+        for (int i = 0; i < capturedPokemon.length; i++) {
+            if (capturedPokemon[i] != null && capturedPokemon[i].getSpeciesName().equals(bPkmn)){
+                this.currentBattlePokemon = capturedPokemon[i];
+            }
+        }
     }
 
     /**
@@ -143,9 +147,9 @@ public class Player {
         for (int i = 0; i < capturedPokemon.length; i++) {
             if(capturedPokemon[i] != null){
                 capturedMonInfo.append(
-                    "<p>Nickname: " + capturedPokemon[i].getName() + "</p>" +
-                    "<p>Species: " + capturedPokemon[i].getSpeciesName() + "</p>" +
-                    "<p>Health: " + capturedPokemon[i].getHealth() + "</p><p></p>"
+                        "<p>Nickname: " + capturedPokemon[i].getName() + "</p>" +
+                                "<p>Species: " + capturedPokemon[i].getSpeciesName() + "</p>" +
+                                "<p>Health: " + capturedPokemon[i].getHealth() + "</p><p></p>"
                 );
             }
         }

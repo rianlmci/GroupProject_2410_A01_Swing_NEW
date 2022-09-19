@@ -12,9 +12,9 @@ public class Pokemon {
    private String moves[][];
 
    /*
-   * Each pokemon's moves and their types!
-   * (So I don't have to keep copy and pasting them into constructors.)
-   */
+    * Each pokemon's moves and their types!
+    * (So I don't have to keep copy and pasting them into constructors.)
+    */
    private String fuecocoMoves[][] = {
            {"Ember", "fire"},
            {"Scratch", "normal"},
@@ -282,7 +282,7 @@ public class Pokemon {
    public static void main(String[] args) {
       GameMaster myGameMaster = new GameMaster();
       Player myPlayer= new Player("Ri","feminine", new Pokemon("Pikachu"));
-      myPlayer.setCurrentBattlePokemon(0);
+      myPlayer.setCurrentBattlePokemon("Pikachu");
       myGameMaster.setCurrentEnemyPokemon(Location.EAST);
       for (int i = 0; i < 4; i++) {
          int ourChosenRandomMove = myGameMaster.chooseWildAttack();
@@ -308,18 +308,18 @@ public class Pokemon {
          //Updates our pokemon's health
          myPlayer.getCurrentBattlePokemon().setHealth(
                  (myPlayer.getCurrentBattlePokemon().getHealth())
-                 -
-                 (myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
-                 myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)))
+                         -
+                         (myGameMaster.calculateDamage(myPlayer.getCurrentBattlePokemon().getType(),
+                                 myGameMaster.getCurrentEnemyPokemon().getMoveTypeAsType(enemyChosenRandomMove)))
          );
          System.out.println("Our " + myPlayer.getCurrentBattlePokemon().getName() + "'s current health is "
                  + myPlayer.getCurrentBattlePokemon().getHealth());
          //Updates the enemy pokemon's health
          myGameMaster.getCurrentEnemyPokemon().setHealth(
                  (myGameMaster.getCurrentEnemyPokemon().getHealth())
-                 -
-                 (myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
-                 myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourChosenRandomMove)))
+                         -
+                         (myGameMaster.calculateDamage(myGameMaster.getCurrentEnemyPokemon().getType(),
+                                 myPlayer.getCurrentBattlePokemon().getMoveTypeAsType(ourChosenRandomMove)))
          );
          System.out.println("Enemy " + myGameMaster.getCurrentEnemyPokemon().getName() + "'s current health is "
                  + myGameMaster.getCurrentEnemyPokemon().getHealth());

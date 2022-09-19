@@ -829,7 +829,7 @@
                   <text value="Grand Canyon"/>
                 </properties>
               </component>
-              <component id="26ea6" class="javax.swing.JButton" binding="catchNorthPokemonBtn">
+              <component id="26ea6" class="javax.swing.JButton" binding="catchItNorthBtn">
                 <constraints>
                   <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -891,7 +891,7 @@
                   <text value="Return To Origin"/>
                 </properties>
               </component>
-              <component id="4d013" class="javax.swing.JButton" binding="catchItButton" default-binding="true">
+              <component id="4d013" class="javax.swing.JButton" binding="catchItSouthBtn">
                 <constraints>
                   <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -972,7 +972,7 @@
                   <text value="Return To Origin"/>
                 </properties>
               </component>
-              <component id="82398" class="javax.swing.JButton" binding="catchItButton1" default-binding="true">
+              <component id="82398" class="javax.swing.JButton" binding="catchItEastBtn">
                 <constraints>
                   <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -1011,7 +1011,7 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="6d6af" class="javax.swing.JLabel">
+              <component id="6d6af" class="javax.swing.JLabel" binding="yellowstoneLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -1028,7 +1028,7 @@
                   <text value="Wild Pikachu Found!"/>
                 </properties>
               </component>
-              <component id="c543f" class="javax.swing.JButton" binding="catchItButton2" default-binding="true">
+              <component id="c543f" class="javax.swing.JButton" binding="catchItWestBtn">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -1048,20 +1048,20 @@
           </grid>
         </children>
       </grid>
-      <grid id="85054" binding="addCaughtPkmnScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
+      <grid id="85054" binding="addPkmnToPartyScreen" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
           <card name="addPokemon"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="4afa7" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="4afa7" binding="addCaughtPkmnPanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints border-constraint="Center"/>
             <properties/>
             <border type="none"/>
             <children>
-              <component id="9e001" class="javax.swing.JLabel">
+              <component id="9e001" class="javax.swing.JLabel" binding="addPkmnPartyImageLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -1104,27 +1104,15 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="c502f" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="c502f" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints border-constraint="Center"/>
             <properties/>
             <border type="none"/>
             <children>
-              <component id="12f61" class="javax.swing.JLabel" binding="battleFroakieLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="34" height="497"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <icon value="images/Froakie.png"/>
-                  <inheritsPopupMenu value="false"/>
-                  <text value=""/>
-                </properties>
-              </component>
               <component id="8f7fd" class="javax.swing.JLabel" binding="battlePokemonLabel">
                 <constraints>
-                  <grid row="2" column="0" row-span="2" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="0" row-span="2" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Choose Battle Pokemon"/>
@@ -1133,10 +1121,11 @@
               <component id="b44ae" class="javax.swing.JLabel" binding="battleFuecocoLabel">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="34" height="497"/>
+                    <preferred-size width="50" height="50"/>
                   </grid>
                 </constraints>
                 <properties>
+                  <horizontalAlignment value="11"/>
                   <icon value="images/Fuecoco.png"/>
                   <text value=""/>
                 </properties>
@@ -1144,32 +1133,25 @@
               <component id="74ce6" class="javax.swing.JLabel" binding="battlePikachuLabel">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="34" height="497"/>
+                    <preferred-size width="50" height="50"/>
                   </grid>
                 </constraints>
                 <properties>
+                  <horizontalAlignment value="11"/>
                   <icon value="images/Pikachu.png"/>
                   <text value=""/>
+                  <verticalAlignment value="0"/>
                 </properties>
               </component>
               <component id="2ffdb" class="javax.swing.JLabel" binding="battleTurtwigLabel">
                 <constraints>
-                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="34" height="497"/>
+                  <grid row="0" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="50" height="50"/>
                   </grid>
                 </constraints>
                 <properties>
                   <icon value="images/Turtwig.png"/>
                   <text value=""/>
-                </properties>
-              </component>
-              <component id="4bb1a" class="javax.swing.JRadioButton" binding="froakieBattleBtn">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <selected value="true"/>
-                  <text value="Froakie"/>
                 </properties>
               </component>
               <component id="1e0d0" class="javax.swing.JRadioButton" binding="fuecocoBattleBtn">
@@ -1191,15 +1173,38 @@
               </component>
               <component id="17f56" class="javax.swing.JRadioButton" binding="turtwigBattleBtn">
                 <constraints>
-                  <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Turtwig"/>
                 </properties>
               </component>
+              <component id="12f61" class="javax.swing.JLabel" binding="battleFroakieLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="50" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <enabled value="true"/>
+                  <horizontalAlignment value="11"/>
+                  <icon value="images/Froakie.png"/>
+                  <inheritsPopupMenu value="false"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="4bb1a" class="javax.swing.JRadioButton" binding="froakieBattleBtn">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <selected value="true"/>
+                  <text value="Froakie"/>
+                </properties>
+              </component>
               <component id="1f1fc" class="javax.swing.JButton" binding="goToBattle">
                 <constraints>
-                  <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Go To Battle"/>
