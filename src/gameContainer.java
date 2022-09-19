@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.concurrent.TimeUnit;
 
 public class gameContainer {
     private JPanel pokemonGameContainerPane;
@@ -114,25 +113,28 @@ public class gameContainer {
     private JButton goToBattle;
     private JLabel grandCanyonImage;
     private JButton catchItButton;
-    private JLabel yosemiteLabel;
+    private JLabel southLabel;
     private JButton catchItButton1;
-    private JLabel denaliLabel;
     private JButton catchItButton2;
-    private JLabel grandCanyonLabel;
+    private JLabel northLabel;
     private JPanel addCaughtPkmnPanel;
     private JPanel addPkmnToPartyScreen;
     private JButton catchItSouthBtn;
     private JButton catchItEastBtn;
     private JButton catchItWestBtn;
     private JButton catchItNorthBtn;
-    private JLabel yellowstoneLabel;
+    private JLabel westLabel;
     private JLabel addPkmnPartyImageLabel;
+    private JLabel catchItImageNorthLabel;
+    private JLabel catchItImageSouthLabel;
+    private JLabel catchItImageEastLabel;
+    private JLabel catchItImageWestLabel;
+    private JLabel eastLabel;
     private CardLayout pkmnGameContainerDeck = (CardLayout) pokemonGameContainerPane.getLayout();
 
     //GAME PIECES
     private Player myPlayer = new Player("No Name", "feminine", new Pokemon("Fuecoco"));
     private GameMaster myGameMaster = new GameMaster();
-
 
     public gameContainer() {
 
@@ -142,28 +144,31 @@ public class gameContainer {
         startGameBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playerData.setVisible(false);
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "playerSelect");
             }
         });
+
         /**
          * @author Rianna McIntyre
          * @author Jasmine
          */
         loadGameBtn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                // Loads player data from file
-                ReadWriteFile test = new ReadWriteFile();
+            public void actionPerformed (ActionEvent e) {
+                ReadWriteFile myReadWriteFile = new ReadWriteFile();
                 try {
-                    test.loadPlayerData();
-                    test.loadGameMasterData();
-                    // playerdata loadGame label. Read from file
-                    playerData.setText(test.loadPlayerData());
+                    myGameMaster = myReadWriteFile.risLoadGameMasterData();
+                    myPlayer = myReadWriteFile.risLoadPlayerData();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
+                originScreenTitleLabel.setText("<html><u><b>" + myPlayer.getName() + "'s Progress So Far...</b></u></html>");
+                originScreenTrainerAppearanceLabel.setIcon(new ImageIcon(gameContainer.class.getResource(myPlayer.getAppearance())));
+                originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
+                originToNorthBtn.setText(myGameMaster.north.getParkLocName());
+                originToSouthBtn.setText(myGameMaster.south.getParkLocName());
+                originToEastBtn.setText(myGameMaster.east.getParkLocName());
+                originToWestBtn.setText(myGameMaster.west.getParkLocName());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
             }
 
@@ -196,12 +201,16 @@ public class gameContainer {
             public void actionPerformed(ActionEvent e) {
                 if (selectStarterFuecocoBtn.isSelected()) {
                     myPlayer.chooseStarterPokemon(new Pokemon("Fuecoco"));
+                    myGameMaster.north.setWildPkmnPresent(false);
                 } else if (selectStarterTurtwigBtn.isSelected()) {
                     myPlayer.chooseStarterPokemon(new Pokemon("Turtwig"));
+                    myGameMaster.south.setWildPkmnPresent(false);
                 } else if (selectStarterFroakieBtn.isSelected()) {
                     myPlayer.chooseStarterPokemon(new Pokemon("Froakie"));
+                    myGameMaster.east.setWildPkmnPresent(false);
                 } else if (selectStarterPikachuBtn.isSelected()) {
                     myPlayer.chooseStarterPokemon(new Pokemon("Pikachu"));
+                    myGameMaster.west.setWildPkmnPresent(false);
                 }
 
                 if (!pokemonSelectNameInput.getText().isEmpty()) {
@@ -235,12 +244,12 @@ public class gameContainer {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.NORTH);
-                myGameMaster.north.setWildPkmnPresent(false);
                 myGameMaster.setCurrentEnemyPokemon(Location.NORTH);
+                northLabel.setText(myGameMaster.north.getDescription());
                 if (!myGameMaster.north.isWildPkmnPresent()) {
-                    northScreen.setVisible(false);
+                    catchItImageNorthLabel.setVisible(false);
+                    catchItNorthBtn.setVisible(false);
                 }
-                grandCanyonLabel.setText(myGameMaster.north.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "north");
             }
         });
@@ -251,12 +260,12 @@ public class gameContainer {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.SOUTH);
-                myGameMaster.south.setWildPkmnPresent(false);
                 myGameMaster.setCurrentEnemyPokemon(Location.SOUTH);
+                southLabel.setText(myGameMaster.south.getDescription());
                 if (!myGameMaster.south.isWildPkmnPresent()) {
-                    southScreen.setVisible(false);
+                    catchItImageSouthLabel.setVisible(false);
+                    catchItSouthBtn.setVisible(false);
                 }
-                yosemiteLabel.setText(myGameMaster.south.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "south");
             }
         });
@@ -269,11 +278,11 @@ public class gameContainer {
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.EAST);
                 myGameMaster.setCurrentEnemyPokemon(Location.EAST);
+                eastLabel.setText(myGameMaster.east.getDescription());
                 if (!myGameMaster.east.isWildPkmnPresent()) {
-                    eastScreen.setVisible(false);
+                    catchItImageEastLabel.setVisible(false);
+                    catchItEastBtn.setVisible(false);
                 }
-                JLabel denaliLabel = new JLabel();
-                denaliLabel.setText(myGameMaster.east.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "east");
             }
         });
@@ -286,10 +295,11 @@ public class gameContainer {
             public void actionPerformed(ActionEvent e) {
                 myPlayer.setPlayerLocation(Location.WEST);
                 myGameMaster.setCurrentEnemyPokemon(Location.WEST);
+                westLabel.setText(myGameMaster.west.getDescription());
                 if (!myGameMaster.west.isWildPkmnPresent()) {
-                    westScreen.setVisible(false);
+                    catchItImageWestLabel.setVisible(false);
+                    catchItWestBtn.setVisible(false);
                 }
-                yellowstoneLabel.setText(myGameMaster.west.getDescription());
                 pkmnGameContainerDeck.show(pokemonGameContainerPane, "west");
             }
         });
@@ -373,14 +383,28 @@ public class gameContainer {
         addPkmnToPartyBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ParkLocation loc = new ParkLocation(myPlayer.getPlayerLocation());
+                //Rianna added this to add the pokemon with its nickname if it has one.
                 if (nicknameField.getText() != null) {
-                    myPlayer.addPkmntoPrty(loc.getWildPokemon());
+                    Pokemon caughtMon = new Pokemon(myGameMaster.getCurrentEnemyPokemon().getSpeciesName(), nicknameField.getText());
+                    myPlayer.addPkmntoPrty(caughtMon);
+                    ReadWriteFile myReadWrite = new ReadWriteFile();
+                    myReadWrite.risWrite(myPlayer);
 
-                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
+                }
+                //Rianna added this to add the pokemon if it doesn't have a nickname.
+                else if (nicknameField.getText() == null){
+                    Pokemon caughtMon = new Pokemon(myGameMaster.getCurrentEnemyPokemon().getSpeciesName());
+                    myPlayer.addPkmntoPrty(caughtMon);
+                    ReadWriteFile myReadWrite = new ReadWriteFile();
+                    myReadWrite.risWrite(myPlayer);
                 }
                 if ((myGameMaster.isGameWon(myPlayer)) == true) {
-                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "gameWonScreen");
+                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "gameWon");
+                }
+                //Rianna added this to update origin labels before returning.
+                else{
+                    originScreenStatsText.setText(myPlayer.getCapturedPkmnInfo());
+                    pkmnGameContainerDeck.show(pokemonGameContainerPane, "origin");
                 }
             }
         });
@@ -529,7 +553,7 @@ public class gameContainer {
 
     public boolean checkCaughtPokemon(String pkmnToCheck) {
         for (int i = 0; i < myPlayer.capturedPokemon.length; i++) {
-            if (myPlayer.capturedPokemon[i] != null && myPlayer.capturedPokemon[i].getSpeciesName().equals(pkmnToCheck)) {
+            if (myPlayer.capturedPokemon[i] != null && myPlayer.capturedPokemon[i] != null && myPlayer.capturedPokemon[i].getSpeciesName().equals(pkmnToCheck)) {
                 return true;
             }
         }
@@ -570,7 +594,8 @@ public class gameContainer {
         //If enemy pokemon's health reaches less than or equal to zero by this point, move to catching screen.
         else if (myGameMaster.getCurrentEnemyPokemon().getHealth() <= 0) {
             setUpCaughtPokemonScreen();
-            //TODO set the label for addPokemon to be image of pokemon
+            addPkmnPartyImageLabel.setIcon(new ImageIcon(gameContainer.class.getResource(
+                    myGameMaster.getCurrentEnemyPokemon().getAppearance())));
             pkmnGameContainerDeck.show(pokemonGameContainerPane, "addPokemon");
         }
 

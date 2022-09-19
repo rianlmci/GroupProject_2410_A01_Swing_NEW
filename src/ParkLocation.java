@@ -31,7 +31,7 @@ public class ParkLocation {
                 case NORTH:
                     externalLocationName = "The Grand Canyon";
                     internalLocation = Location.NORTH;
-                    description = "<html><p><h3>The Grand Canyon:</h3></p>" +
+                    description = "<html><p><h5>The Grand Canyon:</h5></p>" +
                             "<p>is considered one of the finest examples of arid-land erosion in the world." +
                             " Incised by the Colorado River, the canyon is immense, averaging 4,000 feet deep for its " +
                             "entire 277 miles. It is 6,000 feet deep at its deepest point and 18 miles at its widest (NPS).</p></html>";
@@ -42,7 +42,7 @@ public class ParkLocation {
                 case SOUTH:
                     externalLocationName = "Yosemite";
                     internalLocation = Location.SOUTH;
-                    description = "<html><p><h3>Yosemite:</h3></p>" +
+                    description = "<html><p><h5>Yosemite:</h5></p>" +
                             "<p>It is internationally recognized for its granite cliffs," +
                             " waterfalls, clear streams, giant sequoia groves, lakes, mountains, meadows, " +
                             "glaciers, and biological diversity.</p></html>";
@@ -53,7 +53,7 @@ public class ParkLocation {
                 case EAST:
                     externalLocationName = "Denali";
                     internalLocation = Location.EAST;
-                    description = "<html><p><h3>Denali:</h3></p>" +
+                    description = "<html><p><h5>Denali:</h5></p>" +
                             "<p>National Park and Preserve protects more than six million acres of wild " +
                             "interior Alaska. The south side of the reserve is dominated by the mountain and its " +
                             "acolyte peaks in the Alaska Range, while to the north the park includes a vast range of" +
@@ -65,7 +65,7 @@ public class ParkLocation {
                 case WEST:
                     externalLocationName = "Yellowstone";
                     internalLocation = Location.WEST;
-                    description = "<html><p><h3>Yellostone:</h3></p>" +
+                    description = "<html><p><h5>Yellowstone:</h5></p>" +
                             "<p>Yellowstone National Park sits on top of a dormant volcano and is home to more" +
                             " geysers and hot springs than any other place on earth.</p></html>";
                     this.appearance = "/images/west/yellowstone-map.jpeg";

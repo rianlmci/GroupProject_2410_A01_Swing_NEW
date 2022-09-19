@@ -50,21 +50,18 @@ public class Pokemon {
       switch (speciesName) {
          case "Fuecoco":
             this.speciesName = "Fuecoco";
-            this.name = "Fuecoco";
             this.type = Type.FIRE;
             this.appearance = "/images/Fuecoco.png";
             this.moves= fuecocoMoves;
             break;
          case "Pikachu":
             this.speciesName = "Pikachu";
-            this.name = "Pikachu";
             this.type = Type.ELECTRIC;
             this.appearance = "/images/Pikachu.png";
             this.moves= pikachuMoves;
             break;
          case "Turtwig":
             this.speciesName = "Turtwig";
-            this.name = "Turtwig";
             this.type = Type.GRASS;
             this.appearance = "/images/Turtwig.png";
             this.moves= turtwigMoves;

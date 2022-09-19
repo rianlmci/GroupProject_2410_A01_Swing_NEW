@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GroupProject_2410_A01_Swing_NEW:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GroupProject_2410_A01_Swing_NEW_jar</output-path>
+    <root id="archive" name="GroupProject_2410_A01_Swing_NEW.jar">
+      <element id="module-output" name="GroupProject_2410_A01_Swing_NEW" />
+    </root>
+  </artifact>
+</component>

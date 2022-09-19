@@ -115,21 +115,25 @@
                       <text value="Start Game"/>
                     </properties>
                   </component>
-                  <component id="143c4" class="javax.swing.JButton" binding="loadGameBtn">
+                  <component id="964ab" class="javax.swing.JButton" binding="loadGameBtn">
                     <constraints border-constraint="East"/>
                     <properties>
                       <background color="-10525081"/>
                       <borderPainted value="true"/>
                       <contentAreaFilled value="false"/>
-                      <enabled value="true"/>
+                      <defaultCapable value="true"/>
                       <focusPainted value="false"/>
+                      <focusTraversalPolicyProvider value="false"/>
                       <focusable value="false"/>
                       <font style="0"/>
                       <foreground color="-4473925"/>
+                      <horizontalTextPosition value="0"/>
                       <minimumSize width="300" height="30"/>
+                      <opaque value="true"/>
                       <preferredSize width="200" height="100"/>
+                      <requestFocusEnabled value="false"/>
+                      <rolloverEnabled value="false"/>
                       <text value="Load Game"/>
-                      <visible value="true"/>
                     </properties>
                   </component>
                 </children>
@@ -775,12 +779,6 @@
                   </component>
                 </children>
               </grid>
-              <component id="54b33" class="javax.swing.JLabel" binding="playerData">
-                <constraints border-constraint="Center"/>
-                <properties>
-                  <text value="PlayerData"/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>
@@ -812,21 +810,30 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <component id="d2fd6" class="javax.swing.JLabel">
+              <component id="d2fd6" class="javax.swing.JLabel" binding="catchItImageNorthLabel">
                 <constraints>
-                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <icon value="images/Fuecoco.png"/>
                   <text value="You Found Wild Fuecoco!"/>
+                  <verticalAlignment value="1"/>
                 </properties>
               </component>
-              <component id="4c50" class="javax.swing.JLabel" binding="grandCanyonLabel">
+              <component id="4c50" class="javax.swing.JLabel" binding="northLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="200" height="100"/>
+                    <preferred-size width="200" height="100"/>
+                    <maximum-size width="200" height="100"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <enabled value="true"/>
+                  <font size="8" style="0"/>
                   <text value="Grand Canyon"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
                 </properties>
               </component>
               <component id="26ea6" class="javax.swing.JButton" binding="catchItNorthBtn">
@@ -899,7 +906,7 @@
                   <text value="Catch It!"/>
                 </properties>
               </component>
-              <component id="cb89c" class="javax.swing.JLabel">
+              <component id="cb89c" class="javax.swing.JLabel" binding="catchItImageSouthLabel">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -908,12 +915,20 @@
                   <text value="Wild Turtwig Found!"/>
                 </properties>
               </component>
-              <component id="a55b6" class="javax.swing.JLabel" binding="yosemiteLabel">
+              <component id="76743" class="javax.swing.JLabel" binding="southLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="200" height="100"/>
+                    <preferred-size width="200" height="100"/>
+                    <maximum-size width="200" height="100"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <enabled value="true"/>
+                  <font size="9" style="0"/>
                   <text value="Yosemite"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
                 </properties>
               </component>
             </children>
@@ -942,21 +957,13 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="79eb9" class="javax.swing.JLabel">
+              <component id="79eb9" class="javax.swing.JLabel" binding="catchItImageEastLabel">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <icon value="images/Froakie.png"/>
                   <text value="Wild Froakie Found!"/>
-                </properties>
-              </component>
-              <component id="c5942" class="javax.swing.JLabel" binding="denaliLabel">
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Denali"/>
                 </properties>
               </component>
               <hspacer id="43903">
@@ -978,6 +985,22 @@
                 </constraints>
                 <properties>
                   <text value="Catch It!"/>
+                </properties>
+              </component>
+              <component id="f1430" class="javax.swing.JLabel" binding="eastLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="200" height="100"/>
+                    <preferred-size width="200" height="100"/>
+                    <maximum-size width="200" height="100"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <enabled value="true"/>
+                  <font size="8" style="0"/>
+                  <text value="Denali"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
                 </properties>
               </component>
             </children>
@@ -1011,15 +1034,7 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="6d6af" class="javax.swing.JLabel" binding="yellowstoneLabel">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Yellowstone"/>
-                </properties>
-              </component>
-              <component id="deb7d" class="javax.swing.JLabel">
+              <component id="deb7d" class="javax.swing.JLabel" binding="catchItImageWestLabel">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -1044,6 +1059,22 @@
                   <text value="Return To Origin"/>
                 </properties>
               </component>
+              <component id="4218e" class="javax.swing.JLabel" binding="westLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="200" height="100"/>
+                    <preferred-size width="200" height="100"/>
+                    <maximum-size width="200" height="100"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <enabled value="true"/>
+                  <font size="8" style="0"/>
+                  <text value="Yellowstone"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
             </children>
           </grid>
         </children>
@@ -1066,7 +1097,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="29876" class="javax.swing.JTextField" binding="nicknameField">
@@ -1473,7 +1504,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="That last attack made your pokemon faint. Seeing their exhausted face, you decide not to continue on your journey"/>
+                  <text value="&lt;html&gt;&lt;p&gt;That last attack made your pokemon faint.&lt;/p&gt; &lt;p&gt;Seeing their exhausted face, you decide not to continue on your journey&lt;/p&gt;&lt;/html&gt;"/>
                 </properties>
               </component>
               <hspacer id="67601">

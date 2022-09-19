@@ -6,7 +6,6 @@ public class ReadWriteFile {
     String filename = "pokemonPlayers.txt";
     Player myPlayer = new Player("Jasmine", "feminine", new Pokemon("Fuecoco"));
 
-
     /**
      * Saves the players information to a text file.
      * @author original by Jasmine, modified by Rianna
@@ -43,8 +42,8 @@ public class ReadWriteFile {
 
                 //check if current index of all their caught pokemon isn't null
                 if (myPlayer.getCapturedPokemon()[i] != null) {
-                    newCSV.append(myPlayer.getCapturedPokemon()[i].getName() + ","
-                            + myPlayer.getCapturedPokemon()[i].getSpeciesName() + ",");
+                    newCSV.append(myPlayer.getCapturedPokemon()[i].getSpeciesName() + ","
+                            + myPlayer.getCapturedPokemon()[i].getName() + ",");
                 }
 
                 //If we are at the last pokemon they caught, don't add another comma separator and go to the end of the array
@@ -62,84 +61,98 @@ public class ReadWriteFile {
         }
         catch (IOException e) {e.printStackTrace();}
     }
-
     /**
-     * @author Jasmine
+     * @author Jasmine and modified by Rianna
      * Load player data on loadGameBtn
      * loaadPlayerData gets all of the player information
      * loadGameMasterData sets isWildPkmn to false if pokemon is already found
-     * @return
+     * @return loadedMyPlayer, player info from loaded file.
      */
-    public String loadPlayerData() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(filename));
-        try {
-            String line = br.readLine();
-            System.out.print(line);
-            br.close();
-            return line;
+    public Player risLoadPlayerData() throws IOException {
+        String currentLine;
+        Player loadedMyPlayer = new Player("Jasmine", "feminine", new Pokemon("Fuecoco"));
+        //autocloseable try with resources
+        try (BufferedReader br = new BufferedReader(new FileReader(filename));){
+            while((currentLine = br.readLine()) != null) {
+                String[] loadedData = currentLine.split("\\,");
+                loadedMyPlayer = new Player(loadedData[0], loadedData[1], new Pokemon(loadedData[2], loadedData[3]));
+                loadedMyPlayer.capturedPokemon[0].setHealth(Integer.parseInt(loadedData[4]));
+                if(loadedData.length > 4) {
+                    for (int i = 5; i < loadedData.length; i += 3) {
+                        if (i + 3 <= loadedData.length) {
+                            Pokemon pkmntoAdd = new Pokemon(loadedData[i], loadedData[i + 1]);
+                            pkmntoAdd.setHealth(Integer.parseInt(loadedData[i + 2]));
+                            loadedMyPlayer.addPkmntoPrty(pkmntoAdd);
+                        }
+                    }
+                }
+            }
+            return loadedMyPlayer;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         return null;
     }
-    public String loadGameMasterData() {
-        ParkLocation location = new ParkLocation(Location.ORIGIN);
-        String line = "";
-        String splitBy = ",";
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(filename));
-            while((line = br.readLine()) != null){
-                    String[] poke = line.split(splitBy);
-
-                    for(String caught : poke) {
-                        if(caught.equals("Fuecoco")) {
-                            location.setWildPkmnPresent(false);
-                            System.out.print(caught + " ");
-                        }
-                        else if(caught.equals("Turtwig")){
-                            location.setWildPkmnPresent(false);
-                        }
-                        else if(caught.equals("Froakie")){
-                            location.setWildPkmnPresent(false);
-                        }
-                        else if(caught.equals("Pikachu")){
-                            location.setWildPkmnPresent(false);
-                        }
-                        else {location.setWildPkmnPresent(true);}
-
+    /**
+     * @author Jasmine and modified by Rianna
+     * loadGameMasterData on loadGameBtn
+     * loadGameMasterData sets isWildPkmn to false if pokemon is already found
+     * @return loadedMyGameMaster, based on info from loaded file.
+     */
+    public GameMaster risLoadGameMasterData() throws IOException {
+        String currentLine;
+        GameMaster loadedMyGameMaster = new GameMaster();
+        //autocloseable try with resources
+        try (BufferedReader br = new BufferedReader(new FileReader(filename));){
+            while((currentLine = br.readLine()) != null) {
+                String[] loadedData = currentLine.split("\\,");
+                for (int i = 2; i < loadedData.length; i+=3) {
+                    switch (loadedData[i]){
+                        case "Fuecoco":
+                            loadedMyGameMaster.north.setWildPkmnPresent(false);
+                            break;
+                        case "Turtwig":
+                            loadedMyGameMaster.south.setWildPkmnPresent(false);
+                            break;
+                        case "Froakie":
+                            loadedMyGameMaster.east.setWildPkmnPresent(false);
+                            break;
+                        case "Pikachu":
+                            loadedMyGameMaster.west.setWildPkmnPresent(false);
+                            break;
                     }
-
+                }
             }
-            br.close();
-        } catch (IOException e) {
+            return loadedMyGameMaster;
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        return null;
+    }
 
-        return null;}
-
-    /*  Create File
-    public static void main(String[] args) {
-        try {
-            File file = new File("pokemonPlayers.txt");
-            if (file.createNewFile()) {
-                System.out.println("File created: " + file.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        */
 
     //= = = TEST CLIENT = = =//
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Player myPlayer = new Player("Jasmine", "feminine", new Pokemon("Fuecoco"));
-        myPlayer.getCapturedPokemon()[0].setName("Toopy");
-        myPlayer.addPkmntoPrty(new Pokemon("Pikachu"));
-        myPlayer.getCapturedPokemon()[1].setName("Pika");
         ReadWriteFile myReadWriteFile = new ReadWriteFile();
-        /*myReadWriteFile.risWrite(myPlayer);*/
+        myPlayer = myReadWriteFile.risLoadPlayerData();
+        System.out.println("Player name:" + myPlayer.getName());
+        System.out.println("Player appearance:" + myPlayer.getAppearance());
+        System.out.println();
+        for (int i = 0; i < myPlayer.capturedPokemon.length; i++) {
+            if (myPlayer.capturedPokemon[i] != null){
+                System.out.println("Player pokemon species:" + myPlayer.capturedPokemon[i].getSpeciesName());
+                System.out.println("Player pokemon nickname:" + myPlayer.capturedPokemon[i].getName());
+                System.out.println("Player pokemon health:" + myPlayer.capturedPokemon[i].getHealth());
+            }
+        }
+        System.out.println();
+        GameMaster myGameMaster = new GameMaster();
+        myGameMaster = myReadWriteFile.risLoadGameMasterData();
+        System.out.println("Is there a wild pokemon (Fuecoco) at GM's north location: " + myGameMaster.north.isWildPkmnPresent());
+        System.out.println("Is there a wild pokemon (Turtwig) at GM's south location: " + myGameMaster.south.isWildPkmnPresent());
+        System.out.println("Is there a wild pokemon (Froakie) at GM's east location: " + myGameMaster.east.isWildPkmnPresent());
+        System.out.println("Is there a wild pokemon (Pikachu) at GM's west location: " + myGameMaster.west.isWildPkmnPresent());
     }
 }
 

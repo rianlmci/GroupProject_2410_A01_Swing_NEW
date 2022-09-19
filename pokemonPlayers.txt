@@ -1,1 +1,1 @@
-No Name,feminine,Turtwig,Turtwig,80
+Ri,feminine,Pikachu,Pika,40,Froakie,Ribbit,40,Fuecoco,Croc,20,Turtwig,Tort,80
